@@ -12,7 +12,7 @@ class BaseModel:
     def __init__(self):
         # make a random UUID
         self.id = str(uuid.uuid4())
-        self.created_at = str(datetime.datetime.now())
+        self.created_at = datetime.datetime.now()
 
 
     """
@@ -38,6 +38,8 @@ class BaseModel:
     """
     def to_json(self):
         self.__dict__["__class__"] = type(self).__name__
+        self.__dict__["created_at"] = str(self.created_at)
+        self.__dict__["updated_at"] = str(self.updated_at)
         return self.__dict__
 
     """
