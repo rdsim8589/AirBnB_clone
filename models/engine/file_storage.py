@@ -10,28 +10,28 @@ class FileStorage:
     """
     Serializes instance to JSON and deserialize JSON file to an instance
     """
-    def __init__(self):
-        """ The init """
-        self.__file_path = "file.json"
-        self.__objects = {}
+    __path = "file.json"
+    __objects = {}
 
     def all(self):
-        """ returns __objects"""
-        return self.__objects
+        """ returns FileStorage.__.objects"""
+        return FileStorage.__objects
 
     def new(self, obj):
         """ create """
-        self.__objects[obj.id] = obj
+        FileStorage.__objects[obj.id] = obj
 
     def save(self):
-        """ serializes __objects"""
-        with open(self.__file_path, mode='w', encoding='utf-8') as myFile:
-            myFile.write(json.dumps(self.__objects))
+        """ serializes FileStorage.__.objects"""
+        with open(FileStorage.__file_path, mode='w', encoding='utf-8') as jsonFile:
+            jsonFile.write(json.dumps(FileStorage.__objects))
 
     def reload(self):
-        """deserializes self.__objects """
-        if os.path.isfile(self.__file_path) == True:
-            with open(self.__file_path, mode='r', encoding='utf-8') as myFile:
-                self.__objects = json.loads(myFile.read())
-        else:
-            open(self.__file_path, mode='a').close()
+        """deserializes FileStorage.__.objects """
+        if os.path.isfile(FileStorage.__file_path) == True:
+            try:
+                with open(FileStorage.__file_path, mode='r', encoding='utf-8') as jsonFile:
+                    
+                    FileStorage.__objects = json.loads(jsonFile.read())
+            except Exception as e:
+                pass

@@ -42,7 +42,7 @@ class BaseModel:
     """
     def save(self):
         self.updated_at = str(datetime.datetime.now())
-        return storage.self
+        return storage.save()
 
     """
     Return a dictionary containing all keys/values of __dict__ of the object.
