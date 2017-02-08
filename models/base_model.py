@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """
 This is the BaseModel module. This module defines a BaseModule class.
 The BaseModule class defines common attributes/methods for other classes.
@@ -49,3 +50,8 @@ class BaseModel:
         strng = ""
         strng += "[{}] ({}) {}".format(type(self).__name__, self.id, self.__dict__)
         return strng
+
+import storage
+def __init__(self, *args, **kwargs):
+    args
+
