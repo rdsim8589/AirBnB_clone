@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This is the CustomShell module. This module opens a command line interpreter
+This is the CustomShell module. This module defines CustomShell class.
+The CustomShell inherits from Cmd class and opens a command line interpreter
 and prompts user for a command. Type help to list available commands.
 """
 
