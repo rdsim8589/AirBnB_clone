@@ -1,2 +1,17 @@
+<<<<<<< HEAD
 #emacs backup files
 *~
+=======
+### Emacs ###
+# -*- mode: gitignore; -*-
+*~
+a.out
+__pycache__
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+>>>>>>> e6da0a81b90803778f7c59af07d1ccbdd05cf6d6
