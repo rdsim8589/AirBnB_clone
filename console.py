@@ -7,6 +7,7 @@ and prompts user for a command. Type help to list available commands.
 
 
 import cmd
+from models.base_model import BaseModel
 class CustomShell(cmd.Cmd):
     prompt = '(hbnb) '
 
@@ -29,6 +30,33 @@ class CustomShell(cmd.Cmd):
     """
     def emptyline(self):
         pass
+
+    """
+    create a new instances and saves it into the json
+    """
+    def do_create(self, arg):
+        """
+        creates an instance of the desired class
+
+        avaliable classes:
+        BaseClass
+        """
+        if len(arg) > 0:
+            tokens = arg.split(' ')
+            if self.__validate(tokens[0]):
+                from tokens[0]
+                instance = tokens[0]
+                instance.save()
+                print("{}".format(instance.id()))
+
+    def __validate(self, arg):
+        class_list = ['BaseModel']
+        if arg in class_list:
+            return True
+        return False
+
+    def class_selector(self, arg):
+        class_dict = {'BaseModel' : BaseModel}
 
 
 if __name__ == '__main__':
