@@ -14,9 +14,15 @@ class BaseModel:
     Initilaize the object and assign a unique ID and current time.
     """
     def __init__(self, *args, **kwargs):
-        if len(args) > 0 and type(args[0]) == dict:
-            args[0]['created_at'] = datetime.strptime(args[0]['created_at'], '%Y-%m-%d %H:%M:%S.%f')
-            args[0]['updated_at'] = datetime.strptime(args[0]['updated_at'],  '%Y-%m-%d %H:%M:%S.%f')
+        dict_found = 0
+        for arg in args:
+            if type(arg) == dict:
+                dict_found = 1
+        if dict_found == 1:
+            args[0]['created_at'] = datetime.strptime(
+                args[0]['created_at'], '%Y-%m-%d %H:%M:%S.%f')
+            args[0]['updated_at'] = datetime.strptime(
+                args[0]['updated_at'],  '%Y-%m-%d %H:%M:%S.%f')
             self.__dict__ = args[0]
         else:
             # make a random UUID
