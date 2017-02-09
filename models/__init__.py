@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module contain
+This is the init package?
 
 """
 
