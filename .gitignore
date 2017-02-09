@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #emacs backup files
 *~
 =======
@@ -14,4 +13,5 @@ __pycache__
 auto-save-list
 tramp
 .\#*
->>>>>>> e6da0a81b90803778f7c59af07d1ccbdd05cf6d6
+
+*.json
