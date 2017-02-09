@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-
-
 """
 This is the BaseModel module. This module defines a BaseModule class.
 The BaseModule class defines common attributes/methods for other classes.
 """
+
 
 from . import storage
 from datetime import datetime
