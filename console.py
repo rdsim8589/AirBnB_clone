@@ -4,10 +4,9 @@ This is the CustomShell module. This module defines CustomShell class.
 The CustomShell inherits from Cmd class and opens a command line interpreter
 and prompts user for a command. Type help to list available commands.
 """
-
-
 import cmd
 from models import *
+
 
 class CustomShell(cmd.Cmd):
     prompt = '(hbnb) '
@@ -161,7 +160,11 @@ class CustomShell(cmd.Cmd):
     @staticmethod
     def __class_selector(arg):
         """ returns the class that matches the key"""
-        class_dict = {'BaseModel' : base_model.BaseModel}
+        class_dict = {'BaseModel': base_model.BaseModel}
+#                      , 'User': user.User
+#                      , 'State': state.State, 'City': city.City
+#                      , 'Amenity': amenity.Amenity, 'Place': place.Place
+#                      , 'Review': review.Review}
         return class_dict[arg]
 
 if __name__ == '__main__':
