@@ -10,9 +10,3 @@ class Review(BaseModel):
     place_id = ""
     user_id = ""
     text = ""
-
-    """
-    Initialize the object of Review class, calling __init__() of parent class.
-    """
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)

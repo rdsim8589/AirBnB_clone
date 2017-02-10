@@ -18,9 +18,3 @@ class Place(BaseModel):
     latitude = 0.0
     longitude = 0.0
     amenities = []
-
-    """
-    Initialize the object of Place class, calling __init__() of parent class.
-    """
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
