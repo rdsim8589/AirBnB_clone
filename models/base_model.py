@@ -17,6 +17,7 @@ class BaseModel:
         for arg in args:
             if type(arg) == dict:
                 dict_found = 1
+                break
         if dict_found == 1:
             args[0]['created_at'] = datetime.strptime(
                 args[0]['created_at'], '%Y-%m-%d %H:%M:%S.%f')
@@ -28,18 +29,6 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             storage.new(self)
-
-    """
-    Assign public attribute name to the object.
-    """
-    def name(self, name):
-        self.name = name
-
-    """
-    Assign public attribute my_number to the object.
-    """
-    def my_number(self, my_number):
-        self.my_number = my_number
 
     """
     Update the public instance attribute updated_at with the current datetime
