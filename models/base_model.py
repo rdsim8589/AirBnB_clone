@@ -1,14 +1,13 @@
 #!/usr/bin/python3
-
-
 """
 This is the BaseModel module. This module defines a BaseModule class.
 The BaseModule class defines common attributes/methods for other classes.
 """
-
 from . import storage
 from datetime import datetime
 import uuid
+
+
 class BaseModel:
     """
     Initilaize the object and assign a unique ID and current time.
@@ -30,7 +29,6 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             storage.new(self)
-
 
     """
     Update the public instance attribute updated_at with the current datetime
@@ -54,5 +52,6 @@ class BaseModel:
     """
     def __str__(self):
         string = ""
-        string += "[{}] ({}) {}".format(type(self).__name__, self.id, self.__dict__)
+        string += "[{}] ({}) {}".format(
+            type(self).__name__, self.id, self.__dict__)
         return string
