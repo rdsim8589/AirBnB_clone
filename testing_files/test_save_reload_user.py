@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-import sys, os.path
-sys.path.append(os.path.abspath('../'))
-from models.__init__ import storage
+from models import storage
 from models.base_model import BaseModel
 from models.user import User
 

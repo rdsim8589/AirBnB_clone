@@ -7,8 +7,10 @@ from models.base_model import BaseModel
 
 
 class Amenity(BaseModel):
+    name = ""
+
     """
-    Assign public attribute name to the object.
+    Initialize object of Amenity class, calling the Parent calss __init__().
     """
-    def name(self, name):
-        self.name = name
+    def __init__(self, *args, **kwargs):
+        super().__init__(args, kwargs)

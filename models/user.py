@@ -7,26 +7,13 @@ from .base_model import BaseModel
 
 
 class User(BaseModel):
-    """
-    Assign public attribute email to the object.
-    """
-    def email(self, email=""):
-        self.email = email
+    email = ""
+    password = ""
+    first_name = ""
+    last_name = ""
 
     """
-    Assign public attribute pasword to the object.
+    Initialize the User class object, calling __init__() of the Parent class.
     """
-    def password(self, password=""):
-        self.password = password
-
-    """
-    Assign public attribute first_name to the object.
-    """
-    def first_name(self, first_name=""):
-        self.first_name = first_name
-
-    """
-    Assign public attribute last_name to the object.
-    """
-    def last_name(self, last_name=""):
-        self.last_name = last_name
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)

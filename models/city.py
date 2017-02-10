@@ -7,14 +7,11 @@ from models.base_model import BaseModel
 
 
 class City(BaseModel):
-    """
-    Assign public attribute state_id to the object.
-    """
-    def state_id(self, state_id):
-        self.state_id = state_id
+    state_id = ""
+    name = ""
 
     """
-    Assign public attribute name to the object.
+    Initialize the object of City class, calling __init__() of Parent Class.
     """
-    def name(self, name):
-        self.name = name
+    def __init__(self, *args, **kwargs):
+        super().__init__(args, kwargs)
