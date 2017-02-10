@@ -56,13 +56,12 @@ class CustomShell(cmd.Cmd):
         toks = CustomShell.__format_chk(arg, 'destory')
         if toks != 0:
             obj = storage.all()
-            if obj[obj_id].__dict__['__class__'] ==  toks[0]:
+            if obj[obj_id].__dict__['__class__'] == toks[0]:
                 obj.pop(toks[1], None)
                 storage.__objects = obj
                 storage.save()
             else:
                 print("no id found of that class")
-
 
     def do_show(self, arg):
         """
@@ -73,7 +72,7 @@ class CustomShell(cmd.Cmd):
         if toks != 0:
             obj = storage.all()
             obj_id = toks[1]
-            if obj[obj_id].__dict__['__class__'] ==  toks[0]:
+            if obj[obj_id].__dict__['__class__'] == toks[0]:
                 print("{}".format(obj[obj_id]))
             else:
                 print("no id found of that class")
@@ -92,7 +91,7 @@ class CustomShell(cmd.Cmd):
             toks = CustomShell.__format_chk(arg, 'all')
             if toks != 0:
                 for obj_id in obj.keys():
-                    if obj[obj_id].__dict__['__class__'] ==  toks[0]:
+                    if obj[obj_id].__dict__['__class__'] == toks[0]:
                         print("{}".format(obj[obj_id]))
 
     def do_update(self, arg):
@@ -106,13 +105,12 @@ class CustomShell(cmd.Cmd):
             obj = storage.all()
             obj_id = toks[1]
             attribute = toks[2]
-            if obj[obj_id].__dict__['__class__'] ==  toks[0]:
+            if obj[obj_id].__dict__['__class__'] == toks[0]:
                 obj[obj_id].__dict__[attribute] = toks[3]
                 storage.__objects = obj
                 storage.save()
             else:
                 print("no id found of that class")
-
 
     @staticmethod
     def __format_chk(arg, cmd):
@@ -121,8 +119,8 @@ class CustomShell(cmd.Cmd):
 
         Returns the args in toks if pass else 0
         """
-        cmd_by_numarg = {"create" : 1, "show": 2, "destory" : 2, "update": 4
-                         ,"all": 1 }
+        cmd_by_numarg = {"create": 1, "show": 2, "destory": 2, "update": 4,
+                         "all": 1}
         if len(arg) > 0:
             toks = arg.split(' ')
         else:
@@ -161,10 +159,10 @@ class CustomShell(cmd.Cmd):
     def __class_selector(arg):
         """ returns the class that matches the key"""
         class_dict = {'BaseModel': base_model.BaseModel}
-#                      , 'User': user.User
-#                      , 'State': state.State, 'City': city.City
-#                      , 'Amenity': amenity.Amenity, 'Place': place.Place
-#                      , 'Review': review.Review}
+#                      , 'User': user.User,
+#                      'State': state.State, 'City': city.City,
+#                      'Amenity': amenity.Amenity, 'Place': place.Place,
+#                      'Review': review.Review}
         return class_dict[arg]
 
 if __name__ == '__main__':
