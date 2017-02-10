@@ -5,6 +5,8 @@ This module contains the File Storage class
 This class serializes instances to JSON
 and deserialize JSON file to an instance
 """
+
+
 import os, json
 class FileStorage:
     """
@@ -12,6 +14,17 @@ class FileStorage:
     """
     __file_path = "file.json"
     __objects = {}
+
+    """
+    Create a dictionary with key as class name and value as class itself.
+    Return the class based on given class name
+    """
+    @staticmethod
+    def selectClass(class_name):
+        from models.base_model import BaseModel
+        from models.user import User
+        class_dict = {'BaseModel': BaseModel, 'User': User}
+        return class_dict[class_name]
 
     def all(self):
         """ returns FileStorage.__objects"""
@@ -31,13 +44,13 @@ class FileStorage:
 
     def reload(self):
         """deserializes FileStorage.__objects """
-        from models.base_model import BaseModel
         if os.path.isfile(FileStorage.__file_path):
             try:
                 with open(FileStorage.__file_path, mode='r', encoding='utf-8') as jFile:
                     obj = json.load(jFile)
                     for key in obj.keys():
-                        new_obj = BaseModel(obj[key])
+                        class_name = obj[key]["__class__"]
+                        new_obj = self.selectClass(class_name)(obj[key])
                         FileStorage.__objects[key] = new_obj
             except Exception as e:
                 print(e)
