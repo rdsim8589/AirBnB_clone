@@ -5,7 +5,7 @@ The CustomShell inherits from Cmd class and opens a command line interpreter
 and prompts user for a command. Type help to list available commands.
 """
 import cmd
-from models import *
+from models import storage, base_model, user, state, city, amenity, place, review
 
 
 class CustomShell(cmd.Cmd):
@@ -150,7 +150,8 @@ class CustomShell(cmd.Cmd):
     @staticmethod
     def __validate(arg):
         """validates if arg is a class"""
-        class_list = ['BaseModel']
+        class_list = ['BaseModel', 'User', 'State', 'City', 'Amenity', 'Place',
+                      'Review']
         if arg in class_list:
             return True
         return False
@@ -158,11 +159,11 @@ class CustomShell(cmd.Cmd):
     @staticmethod
     def __class_selector(arg):
         """ returns the class that matches the key"""
-        class_dict = {'BaseModel': base_model.BaseModel}
-#                      , 'User': user.User,
-#                      'State': state.State, 'City': city.City,
-#                      'Amenity': amenity.Amenity, 'Place': place.Place,
-#                      'Review': review.Review}
+        class_dict = {'BaseModel': base_model.BaseModel,
+                      'User': user.User,
+                      'State': state.State, 'City': city.City,
+                      'Amenity': amenity.Amenity, 'Place': place.Place,
+                      'Review': review.Review}
         return class_dict[arg]
 
 if __name__ == '__main__':
