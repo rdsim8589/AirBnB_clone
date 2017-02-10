@@ -28,5 +28,5 @@ class User(BaseModel):
     """
     Assign public attribute last_name to the object.
     """
-    def last_name(self, last_name):
+    def last_name(self, last_name=""):
         self.last_name = last_name
