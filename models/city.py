@@ -14,4 +14,4 @@ class City(BaseModel):
     Initialize the object of City class, calling __init__() of Parent Class.
     """
     def __init__(self, *args, **kwargs):
-        super().__init__(args, kwargs)
+        super().__init__(*args, **kwargs)

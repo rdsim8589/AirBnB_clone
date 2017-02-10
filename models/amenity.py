@@ -13,4 +13,4 @@ class Amenity(BaseModel):
     Initialize object of Amenity class, calling the Parent calss __init__().
     """
     def __init__(self, *args, **kwargs):
-        super().__init__(args, kwargs)
+        super().__init__(*args, **kwargs)

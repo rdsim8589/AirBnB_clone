@@ -23,4 +23,4 @@ class Place(BaseModel):
     Initialize the object of Place class, calling __init__() of parent class.
     """
     def __init__(self, *args, **kwargs):
-        super().__init__(args, kwargs)
+        super().__init__(*args, **kwargs)
