@@ -5,7 +5,8 @@ The CustomShell inherits from Cmd class and opens a command line interpreter
 and prompts user for a command. Type help to list available commands.
 """
 import cmd
-from models import *
+from models.base_model import BaseModel
+from models import storage
 
 
 class CustomShell(cmd.Cmd):
@@ -56,6 +57,7 @@ class CustomShell(cmd.Cmd):
         toks = CustomShell.__format_chk(arg, 'destory')
         if toks != 0:
             obj = storage.all()
+            obj_id = toks[1]
             if obj[obj_id].__dict__['__class__'] == toks[0]:
                 obj.pop(toks[1], None)
                 storage.__objects = obj
@@ -158,7 +160,7 @@ class CustomShell(cmd.Cmd):
     @staticmethod
     def __class_selector(arg):
         """ returns the class that matches the key"""
-        class_dict = {'BaseModel': base_model.BaseModel}
+        class_dict = {'BaseModel': BaseModel}
 #                      , 'User': user.User,
 #                      'State': state.State, 'City': city.City,
 #                      'Amenity': amenity.Amenity, 'Place': place.Place,
