@@ -5,10 +5,10 @@ The CustomShell inherits from Cmd class and opens a command line interpreter
 and prompts user for a command. Type help to list available commands.
 """
 import cmd
-from models import storage, user, base_model, storage
+from models import storage, user, base_model
 from models import city, state, amenity, review, place
 
-
+import sys,inspect
 class CustomShell(cmd.Cmd):
     """
     This is the Custom Shell Class
@@ -18,6 +18,15 @@ class CustomShell(cmd.Cmd):
                   'State': state.State, 'City': city.City,
                   'Amenity': amenity.Amenity, 'Place': place.Place,
                   'Review': review.Review}
+
+    def preloop(self):
+        import models
+        for name, val in globals().items():
+            print(val)
+#            if isinstance(val, models.ModuleType):
+#                print( val.__name__)
+
+
     """
     Document quit command information and exit the program.
     """
@@ -161,6 +170,7 @@ class CustomShell(cmd.Cmd):
         if arg in CustomShell.class_dict.keys():
             return True
         return False
+
 
 if __name__ == '__main__':
     CustomShell().cmdloop()
