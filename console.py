@@ -47,9 +47,6 @@ class CustomShell(cmd.Cmd):
             instance = CustomShell.__class_selector(toks[0])()
             instance.save()
             print("{:s}".format(instance.id))
-            print("[instance list count] {}".format(instance.instance_count))
-            for i in instance.instance_list:
-                print(i)
 
     def do_destory(self, arg):
         """
