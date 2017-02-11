@@ -20,18 +20,43 @@ class CustomShell(cmd.Cmd):
                   'Review': review.Review}
 
     class_names = []
+
     def preloop(self):
         import models
-        for i in CustomShell.class_dict.values():
-            CustomShell.class_names.append(str(i).split('.')[-1].split("'")[0])
-        for cls in CustomShell.class_names:
+        for cls in CustomShell.class_dict.keys():
+            CustomShell.class_names.append(cls)
             setattr(self, 'do_{}'.format(cls), self.create_method)
         print(CustomShell.class_names)
 
-
+    def onecmd(self, line):
+        cls = ''
+        for letter in line:
+            if letter == '.':
+                break
+            cls += letter
+        CustomShell.cls = cls
+        print(CustomShell.cls)
+        return(cmd.Cmd.onecmd(self, line))
 
     def create_method(self, args):
-        print(args)
+        arg_list = []
+        flag = 0
+#        for chars in args:
+#            if chars in [',','(',')']
+        if len(args) > 0 and args[0] is '.':
+            method_name = args.split('(')
+            if len(method_name) > 1:
+                args = args.split('(')
+#            for unwanted in [',', ')']:
+ #               args = args.replace(unwanted,'')
+            print(method_name)
+            print(args)
+        else:
+            print("*** Unknown syntax: {}, Please use . after <class>"
+                  .format(args))
+#        for thing in CustomShell.__dict__.items():  getting all the methods and executes it
+#            if 'do_all' in thing[0]:
+#                thing[1](self,"")
 
     """
     Document quit command information and exit the program.
