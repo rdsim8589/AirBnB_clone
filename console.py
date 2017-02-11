@@ -5,10 +5,11 @@ The CustomShell inherits from Cmd class and opens a command line interpreter
 and prompts user for a command. Type help to list available commands.
 """
 import cmd
-from models import storage, user, base_model, storage
+import re
+from models import storage, user, base_model
 from models import city, state, amenity, review, place
 
-
+import sys,inspect
 class CustomShell(cmd.Cmd):
     """
     This is the Custom Shell Class
@@ -18,6 +19,76 @@ class CustomShell(cmd.Cmd):
                   'State': state.State, 'City': city.City,
                   'Amenity': amenity.Amenity, 'Place': place.Place,
                   'Review': review.Review}
+
+    def preloop(self):
+        """
+        dynamically create the do_<class> methods
+        """
+        import models
+        for cls in CustomShell.class_dict.keys():
+            setattr(self, 'do_{}'.format(cls), self.create_method)
+
+    def onecmd(self, line):
+        """
+        catches the cmd input and sets CustomShell.cls = <class name>
+        """
+        cls = ''
+        for letter in line:
+            if letter == '.':
+                break
+            cls += letter
+        CustomShell.cls = cls
+        return(cmd.Cmd.onecmd(self, line))
+
+    def create_method(self, args):
+        """
+        creates the do_<class> methods and calls the desired command
+        """
+        cls_cmd, args = CustomShell.__format_chk(args)
+        if args != 0:
+            print("\n\nthese are the cls_cmd:", cls_cmd)
+            print("these are the arugs:", args)
+            try:
+                CustomShell.__dict__[cls_cmd](self, args)
+            except Exception as e:
+                print("invalid command, exception:{}".format(e))
+
+
+    @staticmethod
+    def __format_chk(args):
+        """
+        checks the format of the args passed to do_<class>
+        Returns: the args in a string separate by white space
+
+        Issues:
+            - Unable to take arguements with "(" ")" "," the string
+            - Will accept if user give certain strange formattings
+                + eg will accept User.all)(
+        """
+        must_have="()"
+        cmd_accept_dicts = ['update']
+        flag = 0
+
+        for char in must_have:
+            if char in args:
+                flag += 1
+        if len(args) > 0 and args[0] is '.':
+            arg_list = re.split('[\(\),]+', args[1:])
+            if arg_list[-1] == '' and len(arg_list) > 1 and flag == len(must_have):
+                arg_list = arg_list[:-1]
+                cls_cmd = "do_" + arg_list[0]
+                for i in range(len(arg_list)):
+                    arg_list[i] = arg_list[i].strip(' ')
+                arg_list[0] = CustomShell.cls
+                args = " ".join(arg_list)
+                return cls_cmd, args
+            else:
+                print("no command given or bad format")
+        else:
+            print("*** Unknown syntax: {}, Please use . after <class>"
+                  .format(args))
+        return 0, 0
+
     """
     Document quit command information and exit the program.
     """
@@ -49,7 +120,7 @@ class CustomShell(cmd.Cmd):
         avaliable classes:
         BaseModel
         """
-        toks = CustomShell.__format_chk(arg, 'create')
+        toks = CustomShell.__arg_chk(arg, 'create')
         if toks != 0:
             instance = CustomShell.class_dict[toks[0]]()
             instance.save()
@@ -60,7 +131,7 @@ class CustomShell(cmd.Cmd):
         Deletes an instance based on the class name and id
         Format: destory <class> <id>
         """
-        toks = CustomShell.__format_chk(arg, 'destory')
+        toks = CustomShell.__arg_chk(arg, 'destory')
         if toks != 0:
             obj = storage.all()
             obj_id = toks[1]
@@ -76,7 +147,7 @@ class CustomShell(cmd.Cmd):
         Prints the string representation an instance based on a class.
         Format: show <class> <id>
         """
-        toks = CustomShell.__format_chk(arg, 'show')
+        toks = CustomShell.__arg_chk(arg, 'show')
         if toks != 0:
             obj = storage.all()
             obj_id = toks[1]
@@ -96,7 +167,7 @@ class CustomShell(cmd.Cmd):
             for obj_id in obj.keys():
                 print("{}".format(obj[obj_id]))
         else:
-            toks = CustomShell.__format_chk(arg, 'all')
+            toks = CustomShell.__arg_chk(arg, 'all')
             if toks != 0:
                 for obj_id in obj.keys():
                     if obj[obj_id].to_json()['__class__'] == toks[0]:
@@ -108,7 +179,7 @@ class CustomShell(cmd.Cmd):
         an attribute
         Format: update <class> <id> <attribute> <value>
         """
-        toks = CustomShell.__format_chk(arg, "update")
+        toks = CustomShell.__arg_chk(arg, "update")
         if toks != 0:
             obj = storage.all()
             obj_id = toks[1]
@@ -121,7 +192,7 @@ class CustomShell(cmd.Cmd):
                 print("no id found of that class")
 
     @staticmethod
-    def __format_chk(arg, cmd):
+    def __arg_chk(arg, cmd):
         """
         Error handling to check the format
 
@@ -161,6 +232,7 @@ class CustomShell(cmd.Cmd):
         if arg in CustomShell.class_dict.keys():
             return True
         return False
+
 
 if __name__ == '__main__':
     CustomShell().cmdloop()
