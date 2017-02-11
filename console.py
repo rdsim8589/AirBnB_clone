@@ -18,9 +18,6 @@ class CustomShell(cmd.Cmd):
                   'State': state.State, 'City': city.City,
                   'Amenity': amenity.Amenity, 'Place': place.Place,
                   'Review': review.Review}
-    count_dict = {'BaseModel': 0, 'User': 0, 'Sate': 0, 'City': 0, 'Amenity': 0,
-                  'Place': 0, 'Review': 0}
-    totalCount = 0
 
     """
     Document quit command information and exit the program.
@@ -57,8 +54,6 @@ class CustomShell(cmd.Cmd):
         if toks != 0:
             instance = CustomShell.class_dict[toks[0]]()
             instance.save()
-            CustomShell.count_dict[toks[0]] += 1
-            CustomShell.totalCount += 1
             print("{:s}".format(instance.id))
 
     def do_destory(self, arg):
@@ -74,8 +69,6 @@ class CustomShell(cmd.Cmd):
                 obj.pop(toks[1], None)
                 storage.__objects = obj
                 storage.save()
-                CustomShell.count_dict[toks[0]] -= 1
-                CustomShell.totalCount -= 1
             else:
                 print("no id found of that class")
 
@@ -110,17 +103,22 @@ class CustomShell(cmd.Cmd):
                     if obj[obj_id].to_json()['__class__'] == toks[0]:
                         print("{}".format(obj[obj_id]))
 
-
-    def do_count(self, arg):
+    @classmethod
+    def do_count(cls, *arg):
         """
         Print the number of instances of a class.
         Format: <class name>.count().
         """
-        toks = arg.split('.')
-        if len(toks) > 1:
-            print("{}".format(CustomShell.count_dict[toks[1]]))
-        else:
-            print("{}".format(CustomShell.totalCount))
+        count = 0
+        if arg is not None:
+            toks = arg[0].split('.')
+            if len(toks) > 1:
+                CustomShell.class_dict[toks[0]].do_count()
+                obj = storage.all()
+                for obj_id in obj.keys():
+                    if obj[obj_id].to_json()['__class__'] == toks[0]:
+                        count += 1
+            print("{}".format(count))
 
     def do_update(self, arg):
         """
