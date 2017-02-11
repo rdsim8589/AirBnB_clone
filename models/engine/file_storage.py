@@ -57,5 +57,4 @@ class FileStorage:
                         new_obj = self.selectClass(class_name)(obj[key])
                         FileStorage.__objects[key] = new_obj
             except Exception as e:
-
                 print("Exception in FileStorage reload",e)
