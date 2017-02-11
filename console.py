@@ -8,6 +8,7 @@ import cmd
 from models import storage, user, base_model, storage
 from models import city, state, amenity, review, place
 
+
 class CustomShell(cmd.Cmd):
     """
     This is the Custom Shell Class
@@ -160,7 +161,6 @@ class CustomShell(cmd.Cmd):
         if arg in CustomShell.class_dict.keys():
             return True
         return False
-
 
 if __name__ == '__main__':
     CustomShell().cmdloop()
