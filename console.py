@@ -19,13 +19,19 @@ class CustomShell(cmd.Cmd):
                   'Amenity': amenity.Amenity, 'Place': place.Place,
                   'Review': review.Review}
 
+    class_names = []
     def preloop(self):
         import models
-        for name, val in globals().items():
-            print(val)
-#            if isinstance(val, models.ModuleType):
-#                print( val.__name__)
+        for i in CustomShell.class_dict.values():
+            CustomShell.class_names.append(str(i).split('.')[-1].split("'")[0])
+        for cls in CustomShell.class_names:
+            setattr(self, 'do_{}'.format(cls), self.create_method)
+        print(CustomShell.class_names)
 
+
+
+    def create_method(self, args):
+        print(args)
 
     """
     Document quit command information and exit the program.
