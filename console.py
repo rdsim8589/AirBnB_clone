@@ -5,12 +5,19 @@ The CustomShell inherits from Cmd class and opens a command line interpreter
 and prompts user for a command. Type help to list available commands.
 """
 import cmd
-from models import storage, base_model, user, state, city, amenity, place, review
+from models import storage, user, base_model, storage
+from models import city, state, amenity, review, place
 
 
 class CustomShell(cmd.Cmd):
+    """
+    This is the Custom Shell Class
+    """
     prompt = '(hbnb) '
-
+    class_dict = {'BaseModel': base_model.BaseModel, 'User': user.User,
+                  'State': state.State, 'City': city.City,
+                  'Amenity': amenity.Amenity, 'Place': place.Place,
+                  'Review': review.Review}
     """
     Document quit command information and exit the program.
     """
@@ -44,7 +51,7 @@ class CustomShell(cmd.Cmd):
         """
         toks = CustomShell.__format_chk(arg, 'create')
         if toks != 0:
-            instance = CustomShell.__class_selector(toks[0])()
+            instance = CustomShell.class_dict[toks[0]]()
             instance.save()
             print("{:s}".format(instance.id))
 
@@ -56,7 +63,8 @@ class CustomShell(cmd.Cmd):
         toks = CustomShell.__format_chk(arg, 'destory')
         if toks != 0:
             obj = storage.all()
-            if obj[obj_id].__dict__['__class__'] == toks[0]:
+            obj_id = toks[1]
+            if obj[obj_id].to_json()['__class__'] == toks[0]:
                 obj.pop(toks[1], None)
                 storage.__objects = obj
                 storage.save()
@@ -72,7 +80,7 @@ class CustomShell(cmd.Cmd):
         if toks != 0:
             obj = storage.all()
             obj_id = toks[1]
-            if obj[obj_id].__dict__['__class__'] == toks[0]:
+            if obj[obj_id].to_json()['__class__'] == toks[0]:
                 print("{}".format(obj[obj_id]))
             else:
                 print("no id found of that class")
@@ -91,7 +99,7 @@ class CustomShell(cmd.Cmd):
             toks = CustomShell.__format_chk(arg, 'all')
             if toks != 0:
                 for obj_id in obj.keys():
-                    if obj[obj_id].__dict__['__class__'] == toks[0]:
+                    if obj[obj_id].to_json()['__class__'] == toks[0]:
                         print("{}".format(obj[obj_id]))
 
     def do_update(self, arg):
@@ -105,7 +113,7 @@ class CustomShell(cmd.Cmd):
             obj = storage.all()
             obj_id = toks[1]
             attribute = toks[2]
-            if obj[obj_id].__dict__['__class__'] == toks[0]:
+            if obj[obj_id].to_json()['__class__'] == toks[0]:
                 obj[obj_id].__dict__[attribute] = toks[3]
                 storage.__objects = obj
                 storage.save()
@@ -150,21 +158,9 @@ class CustomShell(cmd.Cmd):
     @staticmethod
     def __validate(arg):
         """validates if arg is a class"""
-        class_list = ['BaseModel', 'User', 'State', 'City', 'Amenity', 'Place',
-                      'Review']
-        if arg in class_list:
+        if arg in CustomShell.class_dict.keys():
             return True
         return False
-
-    @staticmethod
-    def __class_selector(arg):
-        """ returns the class that matches the key"""
-        class_dict = {'BaseModel': base_model.BaseModel,
-                      'User': user.User,
-                      'State': state.State, 'City': city.City,
-                      'Amenity': amenity.Amenity, 'Place': place.Place,
-                      'Review': review.Review}
-        return class_dict[arg]
 
 if __name__ == '__main__':
     CustomShell().cmdloop()
