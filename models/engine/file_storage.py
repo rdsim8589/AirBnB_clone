@@ -21,9 +21,11 @@ class FileStorage:
     """
     @staticmethod
     def selectClass(class_name):
-        from models.base_model import BaseModel
-        from models.user import User
-        class_dict = {'BaseModel': BaseModel, 'User': User}
+        from .. import base_model, user, state, city, amenity, place, review
+        class_dict = {'BaseModel': base_model.BaseModel, 'User': user.User,
+                      'State': state.State, 'City': city.City,
+                      'Amenity': amenity.Amenity, 'Place': place.Place,
+                      'Review': review.Review}
         return class_dict[class_name]
 
     def all(self):
