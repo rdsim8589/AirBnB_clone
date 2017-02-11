@@ -66,10 +66,17 @@ class CustomShell(cmd.Cmd):
                 + eg will accept User.all)(
         """
         must_have="()"
+        cmd_accept_dicts = ['update']
         flag = 0
+
         for char in must_have:
             if char in args:
                 flag += 1
+
+        if CustomShell.cls in cmd_accept_dicts:
+            if '{' in args:
+                
+
         if len(args) > 0 and args[0] is '.':
             arg_list = re.split('[\(\),]+', args[1:])
             if arg_list[-1] == '' and len(arg_list) > 1 and flag == len(must_have):
