@@ -5,9 +5,10 @@ This module contains the File Storage class
 This class serializes instances to JSON
 and deserialize JSON file to an instance
 """
+import os
+import json
 
 
-import os, json
 class FileStorage:
     """
     Serializes instance to JSON and deserialize JSON file to an instance

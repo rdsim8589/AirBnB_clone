@@ -7,6 +7,7 @@ import uuid
 import datetime
 from models.amenity import Amenity
 
+
 class TestAmenity(unittest.TestCase):
     """
     Create object of Amenity class for testing.

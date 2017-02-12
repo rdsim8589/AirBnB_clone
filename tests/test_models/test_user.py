@@ -35,7 +35,6 @@ class TestUser(unittest.TestCase):
         self.assertTrue(test_created1 != test_created2)
         self.assertTrue(type(test_created2) is datetime.datetime)
 
-
     """
     Test inherited methods.
     """

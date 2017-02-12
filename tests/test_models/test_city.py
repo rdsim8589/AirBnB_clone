@@ -7,6 +7,7 @@ import uuid
 import datetime
 from models.city import City
 
+
 class TestCity(unittest.TestCase):
     """
     Create object of City class for testing.
