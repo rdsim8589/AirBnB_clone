@@ -27,7 +27,7 @@ class TestAmenity(unittest.TestCase):
         self.assertTrue(self.test1.id != self.test2.id)
         test_created1 = self.test1.created_at
         test_created2 = self.test2.created_at
-        self.assertTrue(test_created1 != test_created2)
+        self.assertIsNot(test_created1, test_created2)
         self.assertTrue(type(test_created2) is datetime.datetime)
 
     """
@@ -38,6 +38,12 @@ class TestAmenity(unittest.TestCase):
         self.test1.save()
         updated_save = self.test1.updated_at
         self.assertFalse(test_updated == updated_save)
+
+    """
+    Test dynamic method creation
+    """
+    def test_count(self):
+        self.assertFalse(hasattr(self.test1, "do_count()"))
 
 
 if __name__ == '__main__':

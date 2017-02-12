@@ -21,13 +21,18 @@ class TestCity(unittest.TestCase):
     """
     def test_attribute(self):
         self.assertTrue(hasattr(self.test1, "state_id"))
+        self.assertTrue(hasattr(self.test1, "name"))
         self.assertFalse(hasattr(self.test2, "place"))
+        self.test2.place = ""
+        self.assertTrue(hasattr(self.test2, "place"))
         self.assertTrue(type(self.test1.state_id) is str)
+        self.assertTrue(type(self.test1.name) is str)
+        self.assertTrue(type(self.test2.place) is str)
         self.assertTrue(type(self.test2.id) is str)
         self.assertTrue(self.test1.id != self.test2.id)
         test_created1 = self.test1.created_at
         test_created2 = self.test2.created_at
-        self.assertTrue(test_created1 != test_created2)
+        self.assertIsNot(test_created1, test_created2)
         self.assertTrue(type(test_created2) is datetime.datetime)
 
     """

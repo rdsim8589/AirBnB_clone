@@ -22,19 +22,31 @@ class TestBaseModel(unittest.TestCase):
     def test_attribute(self):
         self.assertFalse(hasattr(self.test1, "name"))
         self.assertFalse(hasattr(self.test2, "my_number"))
-        self.test1.name = ""
-        self.test2.my_number = 1
-        self.assertTrue(hasattr(self.test1, "name"))
-        self.assertTrue(type(self.test1.name) is str)
-        self.assertTrue(hasattr(self.test2, "my_number"))
-        self.assertTrue(type(self.test2.my_number) is int)
+        self.assertTrue(hasattr(self.test1, "created_at"))
         self.assertTrue(hasattr(self.test2, "id"))
         self.assertTrue(type(self.test2.id) is str)
-        self.assertTrue(self.test1.id != self.test2.id)
+        self.assertIsNot(self.test1.id, self.test2.id)
         test_created1 = self.test1.created_at
         test_created2 = self.test2.created_at
-        self.assertTrue(test_created1 != test_created2)
+        self.assertIsNot(test_created1, test_created2)
         self.assertTrue(type(test_created2) is datetime.datetime)
+
+    """
+    Test if an attribute can be added after class is defined.
+    """
+    def test_adding_attribute(self):
+        self.test1.name = ""
+        self.test1.email = ""
+        self.test2.my_number = 1
+        self.test2.address = ""
+        self.assertTrue(hasattr(self.test1, "name"))
+        self.assertTrue(type(self.test1.name) is str)
+        self.assertTrue(hasattr(self.test1, "email"))
+        self.assertTrue(type(self.test1.email) is str)
+        self.assertTrue(hasattr(self.test2, "my_number"))
+        self.assertTrue(type(self.test2.my_number) is int)
+        self.assertTrue(hasattr(self.test2, "address"))
+        self.assertTrue(type(self.test2.address) is str)
 
     """
     Test inherited methods.
@@ -44,6 +56,12 @@ class TestBaseModel(unittest.TestCase):
         self.test1.save()
         updated_save = self.test1.updated_at
         self.assertFalse(test_updated == updated_save)
+
+    """
+    Test if to_json() returns a dictionary of __dict__
+    """
+    def test_to_json(self):
+        self.assertTrue(type(self.test1.to_json() is dict))
 
 
 if __name__ == '__main__':

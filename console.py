@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This is the CustomShell module. This module defines CustomShell class.
+This is the HBNBCommand module. This module defines HBNBCommand class.
 The HBNBCommand inherits from Cmd class and opens a command line interpreter
 and prompts user for a command. Type help to list available commands.
 """
@@ -15,7 +15,7 @@ from models import city, state, amenity, review, place
 
 class HBNBCommand(cmd.Cmd):
     """
-    This is the Custom Shell Class
+    This is the HBNBCommand Class
     """
     prompt = '(hbnb) '
     class_dict = {'BaseModel': base_model.BaseModel, 'User': user.User,

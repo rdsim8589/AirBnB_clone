@@ -23,7 +23,10 @@ class TestReview(unittest.TestCase):
         self.assertTrue(hasattr(self.test1, "place_id"))
         self.assertFalse(hasattr(self.test2, "place"))
         self.assertTrue(hasattr(self.test2, "user_id"))
+        self.assertTrue(hasattr(self.test2, "text"))
         self.assertTrue(type(self.test1.place_id) is str)
+        self.assertTrue(type(self.test2.user_id) is str)
+        self.assertTrue(type(self.test2.text) is str)
         self.assertTrue(type(self.test2.id) is str)
         self.assertTrue(self.test1.place_id != self.test1.id)
         test_created1 = self.test1.created_at
