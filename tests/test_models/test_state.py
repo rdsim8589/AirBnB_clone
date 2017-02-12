@@ -1,19 +1,20 @@
 #!/usr/bin/python3
 """
-This is Amenity class unittest module. This class tests Amenity class.
+This is State class unittest module. This class tests State class.
 """
 import unittest
 import uuid
 import datetime
-from models.amenity import Amenity
+from models.state import State
 
-class TestAmenity(unittest.TestCase):
+
+class TestState(unittest.TestCase):
     """
-    Create object of Amenity class for testing.
+    Create object of State class for testing.
     """
     def setUp(self):
-        self.test1 = Amenity()
-        self.test2 = Amenity()
+        self.test1 = State()
+        self.test2 = State()
 
     """
     Test object attributes.
@@ -28,6 +29,15 @@ class TestAmenity(unittest.TestCase):
         test_created2 = self.test2.created_at
         self.assertTrue(test_created1 != test_created2)
         self.assertTrue(type(test_created2) is datetime.datetime)
+
+    """
+    Test inherited methods.
+    """
+    def test_save(self):
+        test_updated = self.test1.updated_at
+        self.test1.save()
+        updated_save = self.test1.updated_at
+        self.assertFalse(test_updated == updated_save)
 
 
 if __name__ == '__main__':
