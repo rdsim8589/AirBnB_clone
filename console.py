@@ -23,36 +23,40 @@ class HBNBCommand(cmd.Cmd):
                   'Amenity': amenity.Amenity, 'Place': place.Place,
                   'Review': review.Review}
 
-    def preloop(self):
+    @staticmethod
+    def __arg_chk(arg, cmd):
         """
-        dynamically create the do_<class> methods
-        """
-        import models
-        for cls in HBNBCommand.class_dict.keys():
-            setattr(self, 'do_{}'.format(cls), self.create_method)
+        Error handling to check the format
 
-    def onecmd(self, line):
+        Returns the args in toks if pass else 0
         """
-        catches the cmd input and sets HBNBCommand.cls = <class name>
-        """
-        cls = ''
-        for letter in line:
-            if letter == '.':
-                break
-            cls += letter
-        HBNBCommand.cls = cls.strip(" ")
-        return(cmd.Cmd.onecmd(self, line))
-
-    def create_method(self, args):
-        """
-        creates the do_<class> methods and calls the desired command
-        """
-        cls_cmd, args = HBNBCommand.__format_chk(args)
-        if args != 0:
-            try:
-                HBNBCommand.__dict__[cls_cmd](self, args)
-            except Exception as e:
-                print("** invalid command, exception:{} **".format(e))
+        cmd_by_numarg = {"create": 1, "show": 2, "destory": 2, "update": 4,
+                         "all": 1, "update_dict": 2}
+        if len(arg) > 0:
+            toks = arg.split(' ')
+        else:
+            print("** class name is missing **")
+            return 0
+        if HBNBCommand.__validate(toks[0]):
+            if cmd_by_numarg[cmd] == 1:
+                return toks
+            obj = storage.all()
+            if len(toks) < 2:
+                print("** no instance found **")
+            elif toks[1] not in obj:
+                print("** instance id missing **")
+            else:
+                if cmd_by_numarg[cmd] == 2:
+                    return toks
+                if len(toks) < 3:
+                    print("** no attributes found **")
+                elif len(toks) < 4:
+                    print("** value missing **")
+                elif cmd_by_numarg[cmd] == 4:
+                    return toks
+        else:
+            print("** class doesn't exist **")
+        return 0
 
     @staticmethod
     def __format_chk(args):
@@ -97,6 +101,13 @@ class HBNBCommand(cmd.Cmd):
         return 0, 0
 
     @staticmethod
+    def __validate(arg):
+        """validates if arg is a class"""
+        if arg in HBNBCommand.class_dict.keys():
+            return True
+        return False
+
+    @staticmethod
     def __chk_if_dict_in_args(args):
         """
         check if dicts is given in args
@@ -136,6 +147,38 @@ class HBNBCommand(cmd.Cmd):
             return args, dict_in_args
         else:
             return 0, 0
+
+    def preloop(self):
+        """
+        dynamically create the do_<class> methods
+        """
+        import models
+        for cls in HBNBCommand.class_dict.keys():
+            setattr(self, 'do_{}'.format(cls), self.create_method)
+
+    def onecmd(self, line):
+        """
+        catches the cmd input and sets HBNBCommand.cls = <class name>
+        """
+        cls = ''
+        for letter in line:
+            if letter == '.':
+                break
+            cls += letter
+        HBNBCommand.cls = cls.strip(" ")
+        return(cmd.Cmd.onecmd(self, line))
+
+    def create_method(self, args):
+        """
+        creates the do_<class> methods and calls the desired command
+        """
+        cls_cmd, args = HBNBCommand.__format_chk(args)
+        if args != 0:
+            try:
+                HBNBCommand.__dict__[cls_cmd](self, args)
+            except Exception as e:
+                print("** invalid command, exception:{} **".format(e))
+
     """
     Document quit command information and exit the program.
     """
@@ -204,18 +247,6 @@ class HBNBCommand(cmd.Cmd):
             else:
                 print("no id found of that class")
 
-    def do_count(self, args):
-        """
-        returns the number of instances of a class
-        """
-        obj = storage.all()
-        toks = HBNBCommand.__arg_chk(args, 'all')
-        count = 0
-        for obj_id in obj:
-            if obj[obj_id].to_json()['__class__'] == toks[0]:
-                count += 1
-        print("{:d}".format(count))
-
     def do_all(self, arg):
         """
         prints all strings representations of all instances or not based
@@ -232,6 +263,18 @@ class HBNBCommand(cmd.Cmd):
                 for obj_id in obj.keys():
                     if obj[obj_id].to_json()['__class__'] == toks[0]:
                         print("{}".format(obj[obj_id]))
+
+    def do_count(self, args):
+        """
+        returns the number of instances of a class
+        """
+        obj = storage.all()
+        toks = HBNBCommand.__arg_chk(args, 'all')
+        count = 0
+        for obj_id in obj:
+            if obj[obj_id].to_json()['__class__'] == toks[0]:
+                count += 1
+        print("{:d}".format(count))
 
     def do_update(self, args):
         """
@@ -268,49 +311,6 @@ class HBNBCommand(cmd.Cmd):
                     storage.save()
                 else:
                     print("** no id found of that class **")
-
-    @staticmethod
-    def __arg_chk(arg, cmd):
-        """
-        Error handling to check the format
-
-        Returns the args in toks if pass else 0
-        """
-        cmd_by_numarg = {"create": 1, "show": 2, "destory": 2, "update": 4,
-                         "all": 1, "update_dict": 2}
-        if len(arg) > 0:
-            toks = arg.split(' ')
-        else:
-            print("** class name is missing **")
-            return 0
-        if HBNBCommand.__validate(toks[0]):
-            if cmd_by_numarg[cmd] == 1:
-                return toks
-            obj = storage.all()
-            if len(toks) < 2:
-                print("** no instance found **")
-            elif toks[1] not in obj:
-                print("** instance id missing **")
-            else:
-                if cmd_by_numarg[cmd] == 2:
-                    return toks
-                if len(toks) < 3:
-                    print("** no attributes found **")
-                elif len(toks) < 4:
-                    print("** value missing **")
-                elif cmd_by_numarg[cmd] == 4:
-                    return toks
-        else:
-            print("** class doesn't exist **")
-        return 0
-
-    @staticmethod
-    def __validate(arg):
-        """validates if arg is a class"""
-        if arg in HBNBCommand.class_dict.keys():
-            return True
-        return False
-
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
