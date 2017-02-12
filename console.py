@@ -208,6 +208,18 @@ class CustomShell(cmd.Cmd):
             else:
                 print("no id found of that class")
 
+    def do_count(self, args):
+        """
+        returns the number of instances of a class
+        """
+        obj = storage.all()
+        toks = CustomShell.__arg_chk(args, 'all')
+        count = 0
+        for obj_id in obj:
+            if obj[obj_id].to_json()['__class__'] == toks[0]:
+                count += 1
+        print("{:d}".format(count))
+
     def do_all(self, arg):
         """
         prints all strings representations of all instances or not based
@@ -248,7 +260,6 @@ class CustomShell(cmd.Cmd):
                     print(arg_dict, type(arg_dict))
                 except Exception as e:
                     print("not a dictionary", e)
-                print("condition meet!!!")
             else:
                 attribute = toks[2]
                 if obj[obj_id].to_json()['__class__'] == toks[0]:
