@@ -35,14 +35,6 @@ class TestUser(unittest.TestCase):
         self.assertTrue(test_created1 != test_created2)
         self.assertTrue(type(test_created2) is datetime.datetime)
 
-    """
-    Test inherited methods.
-    """
-    def test_save(self):
-        test_updated = self.test1.updated_at
-        self.test1.save()
-        updated_save = self.test1.updated_at
-        self.assertTrue(test_updated != updated_save)
 
 if __name__ == '__main__':
     unittest.main()

@@ -38,8 +38,7 @@ class FileStorage:
 
     def save(self):
         """ serializes FileStorage.__objects"""
-        with open(FileStorage.__file_path, mode='w',
-                  encoding='utf-8') as jsonFile:
+        with open(FileStorage.__file_path, mode='w') as jsonFile:
             tmp_dict = {}
             for key in FileStorage.__objects.keys():
                 tmp_dict[key] = FileStorage.__objects[key].to_json()
@@ -49,12 +48,14 @@ class FileStorage:
         """deserializes FileStorage.__objects """
         if os.path.isfile(FileStorage.__file_path):
             try:
-                with open(FileStorage.__file_path, mode='r',
-                          encoding='utf-8') as jFile:
+                with open(FileStorage.__file_path, mode='r') as jFile:
                     obj = json.load(jFile)
+                    print(obj)
                     for key in obj.keys():
                         class_name = obj[key]["__class__"]
                         new_obj = self.selectClass(class_name)(obj[key])
+                        print(new_obj)
                         FileStorage.__objects[key] = new_obj
+                        print(FileStorage.__objects[key])
             except Exception as e:
-                print("Exception in FileStorage reload",e)
+                print("Exception in FileStorage reload", e)

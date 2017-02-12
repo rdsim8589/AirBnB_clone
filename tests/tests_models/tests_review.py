@@ -22,7 +22,7 @@ class TestReview(unittest.TestCase):
     def test_attribute(self):
         self.assertTrue(hasattr(self.test1, "place_id"))
         self.assertFalse(hasattr(self.test2, "place"))
-        elf.assertTrue(hasattr(self.test2, "user_id"))
+        self.assertTrue(hasattr(self.test2, "user_id"))
         self.assertTrue(type(self.test1.place_id) is str)
         self.assertTrue(type(self.test2.id) is str)
         self.assertTrue(self.test1.place_id != self.test1.id)
@@ -31,14 +31,6 @@ class TestReview(unittest.TestCase):
         self.assertTrue(test_created1 != test_created2)
         self.assertTrue(type(test_created2) is datetime.datetime)
 
-    """
-    Test inherited methods.
-    """
-    def test_save(self):
-        test_updated = self.test1.updated_at
-        self.test1.save()
-        updated_save = self.test1.updated_at
-        self.assertTrue(test_updated != updated_save)
 
 if __name__ == '__main__':
     unittest.main()

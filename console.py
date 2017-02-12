@@ -103,21 +103,23 @@ class CustomShell(cmd.Cmd):
                     if obj[obj_id].to_json()['__class__'] == toks[0]:
                         print("{}".format(obj[obj_id]))
 
-    @classmethod
-    def do_count(cls, *arg):
+    def do_User(self):
+        count = 0
+        obj = storage.all()
+        for obj_id in obj.keys():
+            if obj[obj_id].to_json()['__class__'] == type(self).__name__:
+                obj[obj_id] += 1
+                print("{}".format(count))
+        return count
+
+    def do_count(self, arg):
         """
         Print the number of instances of a class.
         Format: <class name>.count().
         """
-        count = 0
-        if arg is not None:
-            toks = arg[0].split('.')
-            if len(toks) > 1:
-                CustomShell.class_dict[toks[0]].do_count()
-                obj = storage.all()
-                for obj_id in obj.keys():
-                    if obj[obj_id].to_json()['__class__'] == toks[0]:
-                        count += 1
+        toks = arg.split('.')
+        if len(toks) > 1:
+            count = CustomShell.class_dict[toks[0]].do_count()
             print("{}".format(count))
 
     def do_update(self, arg):
@@ -179,15 +181,6 @@ class CustomShell(cmd.Cmd):
         if arg in CustomShell.class_dict.keys():
             return True
         return False
-
-    def do_User(self, arg):
-        arg = arg.replace('()', '')
-        if (arg == "all"):
-            print("in all")
-            self.do_all()
-        elif (arg == "count"):
-            print("in cunt")
-            do_count()
 
 if __name__ == '__main__':
     CustomShell().cmdloop()

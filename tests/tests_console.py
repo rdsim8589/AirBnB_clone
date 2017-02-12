@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import sys
 import unittest
+from unittest import mock
 from unittest.mock import create_autospec
 from console import CustomShell
 from io import StringIO
