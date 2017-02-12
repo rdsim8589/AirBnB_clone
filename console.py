@@ -87,7 +87,8 @@ class CustomShell(cmd.Cmd):
                 cls_cmd = "do_" + arg_list[0]
                 for i in range(len(arg_list)):
                     arg_list[i] = arg_list[i].strip(' ')
-                while '' in arg_list: arg_list.remove('')
+                while '' in arg_list:
+                    arg_list.remove('')
                 arg_list[0] = CustomShell.cls
                 args = " ".join(arg_list)
                 return cls_cmd, args
@@ -110,16 +111,15 @@ class CustomShell(cmd.Cmd):
         Need to Update: to account for {} pairs
             - Now it will accept {} }} as a valid dictionary
         """
-        must_have = "{}"
-        must_have_chk = 0
+        dict_char = "{}"
+        dict_chk = 0
         tmp_dict = tmp_args = ""
         dict_in_args = []
 
         for char in args:
-            if char in must_have:
-                must_have_chk += 1
-        if (must_have_chk % len(must_have)== 0 and
-            must_have_chk >= len(must_have)):
+            if char in dict_char:
+                dict_chk += 1
+        if (dict_chk % len(dict_char)== 0 and dict_chk >= len(dict_char)):
             dict_start = 0
             for char in args:
                 if char == '{':
@@ -136,7 +136,7 @@ class CustomShell(cmd.Cmd):
                     tmp_args += char
             print (dict_in_args)
             return tmp_args, dict_in_args
-        elif must_have_chk == 0:
+        elif dict_chk == 0:
             return args, dict_in_args
         else:
             return 0, 0
@@ -244,8 +244,12 @@ class CustomShell(cmd.Cmd):
         Format: update <class> <id> <attribute> <value>
                 <class>.update(<id>, {<dict>})
         """
-        toks = CustomShell.__arg_chk(args, "update")
+        tmp_args = args
         args, dict_in_args = CustomShell.__chk_if_dict_in_args(args)
+        if len(dict_in_args) > 0:
+            toks = CustomShell.__arg_chk(tmp_args, "update_dict")
+        else:
+            toks = CustomShell.__arg_chk(tmp_args, "update")
         print("these are the toks",toks)
         if toks != 0:
             obj = storage.all()
@@ -277,7 +281,7 @@ class CustomShell(cmd.Cmd):
         Returns the args in toks if pass else 0
         """
         cmd_by_numarg = {"create": 1, "show": 2, "destory": 2, "update": 4,
-                         "all": 1}
+                         "all": 1, "update_dict": 2}
         if len(arg) > 0:
             toks = arg.split(' ')
         else:
