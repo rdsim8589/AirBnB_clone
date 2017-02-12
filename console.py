@@ -6,10 +6,13 @@ and prompts user for a command. Type help to list available commands.
 """
 import cmd
 import re
+import sys
+import json
+import inspect
 from models import storage, user, base_model
 from models import city, state, amenity, review, place
 
-import sys,inspect
+
 class CustomShell(cmd.Cmd):
     """
     This is the Custom Shell Class
@@ -37,7 +40,7 @@ class CustomShell(cmd.Cmd):
             if letter == '.':
                 break
             cls += letter
-        CustomShell.cls = cls
+        CustomShell.cls = cls.strip(" ")
         return(cmd.Cmd.onecmd(self, line))
 
     def create_method(self, args):
@@ -53,7 +56,6 @@ class CustomShell(cmd.Cmd):
             except Exception as e:
                 print("invalid command, exception:{}".format(e))
 
-
     @staticmethod
     def __format_chk(args):
         """
@@ -61,24 +63,31 @@ class CustomShell(cmd.Cmd):
         Returns: the args in a string separate by white space
 
         Issues:
-            - Unable to take arguements with "(" ")" "," the string
+            - Unable to take arguements with "(" ")" "," the string unless
+              in there is once dictionary
             - Will accept if user give certain strange formattings
                 + eg will accept User.all)(
         """
-        must_have="()"
-        cmd_accept_dicts = ['update']
-        flag = 0
+        must_have = "()"
+        must_have_chk = 0
+        args, dict_in_args = CustomShell.__chk_if_dict_in_args(args)
 
-        for char in must_have:
-            if char in args:
-                flag += 1
+        if args == 0:
+            print("dictionary is bad format")
+            return 0, 0
+        print("these are the args", args)
+        print("these are the dicts", dict_in_args)
+        for char in args:
+            if char in must_have:
+                must_have_chk += 1
         if len(args) > 0 and args[0] is '.':
             arg_list = re.split('[\(\),]+', args[1:])
-            if arg_list[-1] == '' and len(arg_list) > 1 and flag == len(must_have):
-                arg_list = arg_list[:-1]
+            if arg_list[-1] == '' and must_have_chk == len(must_have):
+                arg_list = arg_list[:-1] + dict_in_args
                 cls_cmd = "do_" + arg_list[0]
                 for i in range(len(arg_list)):
                     arg_list[i] = arg_list[i].strip(' ')
+                while '' in arg_list: arg_list.remove('')
                 arg_list[0] = CustomShell.cls
                 args = " ".join(arg_list)
                 return cls_cmd, args
@@ -89,6 +98,48 @@ class CustomShell(cmd.Cmd):
                   .format(args))
         return 0, 0
 
+    @staticmethod
+    def __chk_if_dict_in_args(args):
+        """
+        check if dicts is given in args
+
+        if found, returns args without dict, dict with the dict
+        if not found, returns args, dict = []
+        if incorrect format, returns 0,0
+
+        Need to Update: to account for {} pairs
+            - Now it will accept {} }} as a valid dictionary
+        """
+        must_have = "{}"
+        must_have_chk = 0
+        tmp_dict = tmp_args = ""
+        dict_in_args = []
+
+        for char in args:
+            if char in must_have:
+                must_have_chk += 1
+        if (must_have_chk % len(must_have)== 0 and
+            must_have_chk >= len(must_have)):
+            dict_start = 0
+            for char in args:
+                if char == '{':
+                    dict_start = 1
+                    tmp_dict += char
+                elif char == '}':
+                    dict_start = 0
+                    tmp_dict += char
+                    dict_in_args.append(tmp_dict)
+                    tmp_dict = ""
+                elif dict_start == 1:
+                    tmp_dict += char
+                else:
+                    tmp_args += char
+            print (dict_in_args)
+            return tmp_args, dict_in_args
+        elif must_have_chk == 0:
+            return args, dict_in_args
+        else:
+            return 0, 0
     """
     Document quit command information and exit the program.
     """
@@ -101,6 +152,7 @@ class CustomShell(cmd.Cmd):
     """
     def do_EOF(self, arg):
         'Ctrl-D shortcut to exit the program\n'
+        print()
         return True
 
     """
@@ -112,7 +164,7 @@ class CustomShell(cmd.Cmd):
     """
     create a new instances and saves it into the json
     """
-    def do_create(self, arg):
+    def do_create(self, args):
         """
         creates an instance of the desired class
 
@@ -120,8 +172,8 @@ class CustomShell(cmd.Cmd):
         avaliable classes:
         BaseModel
         """
-        toks = CustomShell.__arg_chk(arg, 'create')
-        if toks != 0:
+        toks = CustomShell.__arg_chk(args, 'create')
+        if toks != 0 or len(dict_in_args) > 0:
             instance = CustomShell.class_dict[toks[0]]()
             instance.save()
             print("{:s}".format(instance.id))
@@ -173,23 +225,38 @@ class CustomShell(cmd.Cmd):
                     if obj[obj_id].to_json()['__class__'] == toks[0]:
                         print("{}".format(obj[obj_id]))
 
-    def do_update(self, arg):
+    def do_update(self, args):
         """
         Updates the instance based on the class name, id by adding or updating
         an attribute
         Format: update <class> <id> <attribute> <value>
+                <class>.update(<id>, {<dict>})
         """
-        toks = CustomShell.__arg_chk(arg, "update")
+        toks = CustomShell.__arg_chk(args, "update")
+        args, dict_in_args = CustomShell.__chk_if_dict_in_args(args)
+        print("these are the toks",toks)
         if toks != 0:
             obj = storage.all()
             obj_id = toks[1]
-            attribute = toks[2]
-            if obj[obj_id].to_json()['__class__'] == toks[0]:
-                obj[obj_id].__dict__[attribute] = toks[3]
-                storage.__objects = obj
-                storage.save()
+            if toks[2][0] == '{' and toks[-1][-1] == '}':
+                try:
+                    arg_dict = json.loads(dict_in_args[0])
+                    for key in arg_dict.keys():
+                        obj[obj_id].__dict__[key] = arg_dict[key]
+                    storage.__objects = obj
+                    storage.save()
+                    print(arg_dict, type(arg_dict))
+                except Exception as e:
+                    print("not a dictionary", e)
+                print("condition meet!!!")
             else:
-                print("no id found of that class")
+                attribute = toks[2]
+                if obj[obj_id].to_json()['__class__'] == toks[0]:
+                    obj[obj_id].__dict__[attribute] = toks[3]
+                    storage.__objects = obj
+                    storage.save()
+                else:
+                    print("no id found of that class")
 
     @staticmethod
     def __arg_chk(arg, cmd):
