@@ -152,8 +152,6 @@ class HBNBCommand(cmd.Cmd):
         """
         dynamically create the do_<class> methods
         """
-        import models
-
         for cls in HBNBCommand.class_dict.keys():
             setattr(self, 'do_{}'.format(cls), self.create_method)
 
