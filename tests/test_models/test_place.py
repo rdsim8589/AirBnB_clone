@@ -7,6 +7,7 @@ import uuid
 import datetime
 from models.place import Place
 
+
 class TestBaseModel(unittest.TestCase):
     """
     Create object of Place class for testing.
