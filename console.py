@@ -164,6 +164,7 @@ class HBNBCommand(cmd.Cmd):
             if letter == '.':
                 break
             cls += letter
+
         HBNBCommand.cls = cls.strip(" ")
         return(cmd.Cmd.onecmd(self, line))
 
@@ -171,6 +172,7 @@ class HBNBCommand(cmd.Cmd):
         """
         creates the do_<class> methods and calls the desired command
         """
+
         cls_cmd, args = HBNBCommand.__format_chk(args)
         if args != 0:
             try:
@@ -264,6 +266,7 @@ class HBNBCommand(cmd.Cmd):
                         print("{}".format(obj[obj_id]))
 
     def do_count(self, args):
+
         """
         returns the number of instances of a class
         """
