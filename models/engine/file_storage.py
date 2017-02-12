@@ -50,12 +50,9 @@ class FileStorage:
             try:
                 with open(FileStorage.__file_path, mode='r') as jFile:
                     obj = json.load(jFile)
-                    print(obj)
                     for key in obj.keys():
                         class_name = obj[key]["__class__"]
                         new_obj = self.selectClass(class_name)(obj[key])
-                        print(new_obj)
                         FileStorage.__objects[key] = new_obj
-                        print(FileStorage.__objects[key])
             except Exception as e:
                 print("Exception in FileStorage reload", e)

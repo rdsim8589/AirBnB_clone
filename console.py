@@ -1,19 +1,21 @@
 #!/usr/bin/python3
 """
-This is the CustomShell module. This module defines CustomShell class.
-The CustomShell inherits from Cmd class and opens a command line interpreter
+This is the HBNBCommand module. This module defines HBNBCommand class.
+The HBNBCommand inherits from cmd.Cmd class and opens a command line interpreter
 and prompts user for a command. Type help to list available commands.
 """
 import cmd
 import re
+import sys
+import inspect
+import ast
 from models import storage, user, base_model
 from models import city, state, amenity, review, place
-import sys,inspect
 
 
-class CustomShell(cmd.Cmd):
+class HBNBCommand(cmd.Cmd):
     """
-    This is the Custom Shell Class
+    This is the HBNBCommand Class
     """
     prompt = '(hbnb) '
     class_dict = {'BaseModel': base_model.BaseModel, 'User': user.User,
@@ -29,13 +31,13 @@ class CustomShell(cmd.Cmd):
         Returns the args in toks if pass else 0
         """
         cmd_by_numarg = {"create": 1, "show": 2, "destory": 2, "update": 4,
-                         "all": 1}
+                         "all": 1, "update_dict": 2}
         if len(arg) > 0:
             toks = arg.split(' ')
         else:
             print("** class name is missing **")
             return 0
-        if CustomShell.__validate(toks[0]):
+        if HBNBCommand.__validate(toks[0]):
             if cmd_by_numarg[cmd] == 1:
                 return toks
             obj = storage.all()
@@ -63,29 +65,36 @@ class CustomShell(cmd.Cmd):
         Returns: the args in a string separate by white space
 
         Issues:
-            - Unable to take arguements with "(" ")" "," the string
+            - Unable to take arguements with "(" ")" "," the string unless
+              in there is once dictionary
             - Will accept if user give certain strange formattings
                 + eg will accept User.all)(
         """
-        must_have="()"
-        cmd_accept_dicts = ['update']
-        flag = 0
+        must_have = "()"
+        must_have_chk = 0
+        args, dict_in_args = HBNBCommand.__chk_if_dict_in_args(args)
 
-        for char in must_have:
-            if char in args:
-                flag += 1
+        if args == 0:
+            print("** dictionary bad format **")
+            return 0, 0
+
+        for char in args:
+            if char in must_have:
+                must_have_chk += 1
         if len(args) > 0 and args[0] is '.':
             arg_list = re.split('[\(\),]+', args[1:])
-            if arg_list[-1] == '' and len(arg_list) > 1 and flag == len(must_have):
-                arg_list = arg_list[:-1]
+            if arg_list[-1] == '' and must_have_chk == len(must_have):
+                arg_list = arg_list[:-1] + dict_in_args
                 cls_cmd = "do_" + arg_list[0]
                 for i in range(len(arg_list)):
                     arg_list[i] = arg_list[i].strip(' ')
-                arg_list[0] = CustomShell.cls
+                while '' in arg_list:
+                    arg_list.remove('')
+                arg_list[0] = HBNBCommand.cls
                 args = " ".join(arg_list)
                 return cls_cmd, args
             else:
-                print("no command given or bad format")
+                print("** no command given or bad format **")
         else:
             print("*** Unknown syntax: {}, Please use . after <class>"
                   .format(args))
@@ -94,42 +103,82 @@ class CustomShell(cmd.Cmd):
     @staticmethod
     def __validate(arg):
         """validates if arg is a class"""
-        if arg in CustomShell.class_dict.keys():
+        if arg in HBNBCommand.class_dict.keys():
             return True
         return False
+
+    @staticmethod
+    def __chk_if_dict_in_args(args):
+        """
+        check if dicts is given in args
+
+        if found, returns args without dict, dict with the dict
+        if not found, returns args, dict = []
+        if incorrect format, returns 0,0
+
+        Need to Update: to account for {} pairs
+            - Now it will accept {} }} as a valid dictionary
+        """
+        dict_char = "{}"
+        dict_chk = 0
+        tmp_dict = tmp_args = ""
+        dict_in_args = []
+
+        for char in args:
+            if char in dict_char:
+                dict_chk += 1
+        if dict_chk % len(dict_char) == 0 and dict_chk >= len(dict_char):
+            dict_start = 0
+            for char in args:
+                if char == '{':
+                    dict_start = 1
+                    tmp_dict += char
+                elif char == '}':
+                    dict_start = 0
+                    tmp_dict += char
+                    dict_in_args.append(tmp_dict)
+                    tmp_dict = ""
+                elif dict_start == 1:
+                    tmp_dict += char
+                else:
+                    tmp_args += char
+            return tmp_args, dict_in_args
+        elif dict_chk == 0:
+            return args, dict_in_args
+        else:
+            return 0, 0
 
     def preloop(self):
         """
         dynamically create the do_<class> methods
         """
-        import models
-        for cls in CustomShell.class_dict.keys():
+        for cls in HBNBCommand.class_dict.keys():
             setattr(self, 'do_{}'.format(cls), self.create_method)
 
     def onecmd(self, line):
         """
-        catches the cmd input and sets CustomShell.cls = <class name>
+        catches the cmd input and sets HBNBCommand.cls = <class name>
         """
         cls = ''
         for letter in line:
             if letter == '.':
                 break
             cls += letter
-        CustomShell.cls = cls
+
+        HBNBCommand.cls = cls.strip(" ")
         return(cmd.Cmd.onecmd(self, line))
 
     def create_method(self, args):
         """
         creates the do_<class> methods and calls the desired command
         """
-        cls_cmd, args = CustomShell.__format_chk(args)
+
+        cls_cmd, args = HBNBCommand.__format_chk(args)
         if args != 0:
-            print("\n\nthese are the cls_cmd:", cls_cmd)
-            print("these are the arugs:", args)
             try:
-                CustomShell.__dict__[cls_cmd](self, args)
+                HBNBCommand.__dict__[cls_cmd](self, args)
             except Exception as e:
-                print("invalid command, exception:{}".format(e))
+                print("** invalid command, exception:{} **".format(e))
 
     """
     Document quit command information and exit the program.
@@ -143,6 +192,7 @@ class CustomShell(cmd.Cmd):
     """
     def do_EOF(self, arg):
         'Ctrl-D shortcut to exit the program\n'
+        print()
         return True
 
     """
@@ -154,17 +204,17 @@ class CustomShell(cmd.Cmd):
     """
     create a new instances and saves it into the json
     """
-    def do_create(self, arg):
+    def do_create(self, args):
         """
         creates an instance of the desired class
 
         Format: create <class>
         avaliable classes:
-        BaseModel
+        BaseModel, User, State, City, Amenity, Place, Review
         """
-        toks = CustomShell.__arg_chk(arg, 'create')
+        toks = HBNBCommand.__arg_chk(args, 'create')
         if toks != 0:
-            instance = CustomShell.class_dict[toks[0]]()
+            instance = HBNBCommand.class_dict[toks[0]]()
             instance.save()
             print("{:s}".format(instance.id))
 
@@ -173,7 +223,7 @@ class CustomShell(cmd.Cmd):
         Deletes an instance based on the class name and id
         Format: destory <class> <id>
         """
-        toks = CustomShell.__arg_chk(arg, 'destory')
+        toks = HBNBCommand.__arg_chk(arg, 'destory')
         if toks != 0:
             obj = storage.all()
             obj_id = toks[1]
@@ -182,14 +232,14 @@ class CustomShell(cmd.Cmd):
                 storage.__objects = obj
                 storage.save()
             else:
-                print("no id found of that class")
+                print("** no id found of that class **")
 
     def do_show(self, arg):
         """
         Prints the string representation an instance based on a class.
         Format: show <class> <id>
         """
-        toks = CustomShell.__arg_chk(arg, 'show')
+        toks = HBNBCommand.__arg_chk(arg, 'show')
         if toks != 0:
             obj = storage.all()
             obj_id = toks[1]
@@ -209,40 +259,60 @@ class CustomShell(cmd.Cmd):
             for obj_id in obj.keys():
                 print("{}".format(obj[obj_id]))
         else:
-            toks = CustomShell.__arg_chk(arg, 'all')
+            toks = HBNBCommand.__arg_chk(arg, 'all')
             if toks != 0:
                 for obj_id in obj.keys():
                     if obj[obj_id].to_json()['__class__'] == toks[0]:
                         print("{}".format(obj[obj_id]))
 
-    def do_count(self, arg):
-        """
-        Print the number of instances of a class.
-        Format: <class name>.count().
-        """
-        toks = arg.split('.')
-        if len(toks) > 1:
-            count = CustomShell.class_dict[toks[0]].do_count()
-            print("{}".format(count))
+    def do_count(self, args):
 
-    def do_update(self, arg):
+        """
+        returns the number of instances of a class
+        """
+        obj = storage.all()
+        toks = HBNBCommand.__arg_chk(args, 'all')
+        count = 0
+        for obj_id in obj:
+            if obj[obj_id].to_json()['__class__'] == toks[0]:
+                count += 1
+        print("{:d}".format(count))
+
+    def do_update(self, args):
         """
         Updates the instance based on the class name, id by adding or updating
         an attribute
+
+        Uses ast.literal_eval, not sure if this is a good thing
         Format: update <class> <id> <attribute> <value>
+                <class>.update(<id>, {<dict>})
         """
-        toks = CustomShell.__arg_chk(arg, "update")
+        tmp_args = args
+        args, dict_in_args = HBNBCommand.__chk_if_dict_in_args(args)
+        if len(dict_in_args) > 0:
+            toks = HBNBCommand.__arg_chk(tmp_args, "update_dict")
+        else:
+            toks = HBNBCommand.__arg_chk(tmp_args, "update")
         if toks != 0:
             obj = storage.all()
             obj_id = toks[1]
-            attribute = toks[2]
-            if obj[obj_id].to_json()['__class__'] == toks[0]:
-                obj[obj_id].__dict__[attribute] = toks[3]
-                storage.__objects = obj
-                storage.save()
+            if toks[2][0] == '{' and toks[-1][-1] == '}':
+                try:
+                    arg_dict = ast.literal_eval(dict_in_args[0])
+                    for key in arg_dict.keys():
+                        obj[obj_id].__dict__[key] = arg_dict[key]
+                    storage.__objects = obj
+                    storage.save()
+                except Exception as e:
+                    print("** Not a dictionary. {} **".format(e))
             else:
-                print("no id found of that class")
-
+                attribute = toks[2]
+                if obj[obj_id].to_json()['__class__'] == toks[0]:
+                    obj[obj_id].__dict__[attribute] = toks[3]
+                    storage.__objects = obj
+                    storage.save()
+                else:
+                    print("** no id found of that class **")
 
 if __name__ == '__main__':
-    CustomShell().cmdloop()
+    HBNBCommand().cmdloop()

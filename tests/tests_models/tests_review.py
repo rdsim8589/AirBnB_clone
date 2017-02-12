@@ -28,7 +28,7 @@ class TestReview(unittest.TestCase):
         self.assertTrue(self.test1.place_id != self.test1.id)
         test_created1 = self.test1.created_at
         test_created2 = self.test2.created_at
-        self.assertTrue(test_created1 != test_created2)
+        self.assertIsNot(test_created1, test_created2)
         self.assertTrue(type(test_created2) is datetime.datetime)
 
 
