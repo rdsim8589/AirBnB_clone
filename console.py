@@ -30,7 +30,7 @@ class HBNBCommand(cmd.Cmd):
 
         Returns the args in toks if pass else 0
         """
-        cmd_by_numarg = {"create": 1, "show": 2, "destory": 2, "update": 4,
+        cmd_by_numarg = {"create": 1, "show": 2, "destroy": 2, "update": 4,
                          "all": 1, "update_dict": 2}
         if len(arg) > 0:
             toks = arg.split(' ')
@@ -218,12 +218,12 @@ class HBNBCommand(cmd.Cmd):
             instance.save()
             print("{:s}".format(instance.id))
 
-    def do_destory(self, arg):
+    def do_destroy(self, arg):
         """
         Deletes an instance based on the class name and id
-        Format: destory <class> <id>
+        Format: destroy <class> <id>
         """
-        toks = HBNBCommand.__arg_chk(arg, 'destory')
+        toks = HBNBCommand.__arg_chk(arg, 'destroy')
         if toks != 0:
             obj = storage.all()
             obj_id = toks[1]
