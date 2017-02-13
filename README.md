@@ -9,21 +9,18 @@ This is the AirBnB clone project, called The Holberton B&B as part of [Holberton
 
 ### Part 1: Create a Command Interpreter to manage your AirBnB objects that does following:
 - Supports basic help, quit, exit and enter commands.
-#### Example
 ```
 help
-Ctrl+D
+ctrl+d
 quit
 exit
 enter
 ```
 - Create a new object (ex: a new User or a new Place).
-#### Example
 ```
 create <classname>
 ```
 - Retrieve an object from a file, a database etc.
-#### Example
 ```
 show <classname>
 all
@@ -31,21 +28,18 @@ all
 <classname>.show
 ```
 - Do operations on objects (count, compute stats, etc.).
-#### Example
 ```
 <classname>.count
 ```
 - Update attributes of an object.
-#### Example
 ```
 update <classname> <id> <attribute_to_update> <updating_value>
 ```
 - Destroy an object.
-#### Example
 ```
 destroy <classname> <id>
 ```
-![Alt text](https://github.com/guptaNswati/AirBnB_clone/blob/master/cmi.png) "Command Interpreter")
+![Alt text](https://github.com/guptaNswati/AirBnB_clone/blob/master/screenshots/cmi.png)
 ### Styling and Specifications
 Programs styling and formatting is based on pep8 style guide and is checked as:
 ```
@@ -61,7 +55,7 @@ To run the command interpreter:
 To run the unittests:
 ```
 python3 -m unittest discover tests
-or to run a specific file:
+or to run for a specific file:
 python3 -m tests.test_file.py
 ```
 
@@ -71,8 +65,9 @@ python3 -m tests.test_file.py
 - /models/engine - contains all storage classes.
 - /tests - contains all unit tests for classes.
 - /tests/test_models/test_engine - contains unit tests for all storage classes.
+- /screenshots - contains screenshots of sample output.
 
 
 ## Authors
 - **Richard Sim**, \<>
-- **Swati Gupta**, \ <77@holbertonschool.com>
+- **Swati Gupta**, \<77@holbertonschool.com>
