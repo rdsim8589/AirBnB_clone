@@ -218,12 +218,12 @@ class HBNBCommand(cmd.Cmd):
             instance.save()
             print("{:s}".format(instance.id))
 
-    def do_destory(self, arg):
+    def do_destroy(self, arg):
         """
         Deletes an instance based on the class name and id
-        Format: destory <class> <id>
+        Format: destroy <class> <id>
         """
-        toks = HBNBCommand.__arg_chk(arg, 'destory')
+        toks = HBNBCommand.__arg_chk(arg, 'destroy')
         if toks != 0:
             obj = storage.all()
             obj_id = toks[1]
