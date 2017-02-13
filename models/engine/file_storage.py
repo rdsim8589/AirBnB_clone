@@ -22,6 +22,11 @@ class FileStorage:
     """
     @staticmethod
     def selectClass(class_name):
+        """
+        input: class_name as a string
+        return: the instance of the desired class
+        """
+
         from .. import base_model, user, state, city, amenity, place, review
         class_dict = {'BaseModel': base_model.BaseModel, 'User': user.User,
                       'State': state.State, 'City': city.City,
