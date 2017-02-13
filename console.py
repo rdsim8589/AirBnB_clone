@@ -266,7 +266,6 @@ class HBNBCommand(cmd.Cmd):
                         print("{}".format(obj[obj_id]))
 
     def do_count(self, args):
-
         """
         returns the number of instances of a class
         """
