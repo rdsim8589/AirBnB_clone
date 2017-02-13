@@ -31,7 +31,7 @@ class TestFileStorage(unittest.TestCase):
     Test save method.
     """
     def test_save(self):
-        mock_val = {"id": {"__class__": "BaseMOodel"}}
+        mock_val = {"id": {"__class__": "BaseModel"}}
         expected_val = json.dumps(mock_val)
         self.assertTrue(type(expected_val) is str)
 
@@ -39,7 +39,7 @@ class TestFileStorage(unittest.TestCase):
     Test reload method.
     """
     def test_reload(self):
-        mock_val = '{"id": {"__class__": "BaseMOodel"}}'
+        mock_val = '{"id": {"__class__": "BaseModel"}}'
         expected_val = json.loads(mock_val)
         self.assertTrue(type(expected_val) is dict)
 
