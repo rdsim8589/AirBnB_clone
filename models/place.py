@@ -7,6 +7,7 @@ from models.base_model import BaseModel
 
 
 class Place(BaseModel):
+    """ This is the place class and it inherts from BaseModel"""
     city_id = ""
     user_id = ""
     name = ""

@@ -7,5 +7,6 @@ from models.base_model import BaseModel
 
 
 class City(BaseModel):
+    """ This is the City class and it inherts from BaseModel """
     state_id = ""
     name = ""
