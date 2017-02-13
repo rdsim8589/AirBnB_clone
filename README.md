@@ -69,5 +69,5 @@ python3 -m tests.test_file.py
 
 
 ## Authors
-- **Richard Sim**, \<>
+- **Richard Sim**, \<100@holbertonschool.com>
 - **Swati Gupta**, \<77@holbertonschool.com>
