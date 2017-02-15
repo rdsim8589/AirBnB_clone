@@ -1,0 +1,3716 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="Holberton School">
+    <link rel="icon" href="../../favicon.ico">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <title>Holberton School's awesome intranet</title>
+
+    <link rel="stylesheet" media="all" href="/assets/application-db3812a3f2ca9d0bad785735e12c914d1cd84a76ea29dae954e190aef0d9dbcc.css" />
+    <script src="/assets/application-8fb7b8da8395b357f26c7097e76564a55eb64d6906cc9e5248a2da2e4907ce58.js"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.ico" />
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="/QEpmKoBmjR0I7Jyd/hkn0Nef4NR5sGdLlODDGjskuOpFTg09g/3dvD6JvHd+8KAOPJX/+YToYW20xAb0Dg6dQ==" />
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body class="signed_in">
+
+      <nav id="nav-left" class="hidden-xs title-font">
+        <a href="/">
+          <div id="holberton-logo">
+            <img alt="Holberton School" src="/assets/holberton-logo-simplified-d4e8a1e8bf5ad93c8c3ce32895b4b53749b477b7ba7342d7f064e6883bcd3be2.png" />
+          </div>
+</a>        <ul>
+            <li>
+    <a href="/dashboards/my_planning">
+        <div class="icon">
+          <i class="fa fa-calendar"></i>
+        </div>
+      My planning
+</a>  </li>
+  <li>
+    <a href="/dashboards/my_current_projects">
+        <div class="icon">
+          <i class="fa fa-list"></i>
+        </div>
+      My projects
+</a>  </li>
+  <li>
+    <a href="/dashboards/my_concepts">
+        <div class="icon">
+          <i class="fa fa-file-text"></i>
+        </div>
+      My concepts
+</a>  </li>
+  <li>
+    <a href="/dashboards/my_batchmates">
+        <div class="icon">
+          <i class="fa fa-users"></i>
+        </div>
+      My batchmates
+</a>  </li>
+  <li>
+    <a href="/dashboards/corrections_i_can_make">
+        <div class="icon">
+          <i class="fa fa-check"></i>
+        </div>
+      QA reviews I can make
+</a>  </li>
+  <li>
+    <a href="/dashboards/my_captain_log">
+        <div class="icon">
+          <i class="fa fa-book"></i>
+        </div>
+      My Captain's Logs
+</a>  </li>
+  <li>
+    <a href="/dashboards/my_officers">
+        <div class="icon">
+          <i class="fa fa-building"></i>
+        </div>
+      My Officers
+</a>  </li>
+  <li>
+    <a href="/dashboards/my_speakers_of_the_day">
+        <div class="icon">
+          <i class="fa fa-microphone"></i>
+        </div>
+      My Speakers of the day
+</a>  </li>
+  <li>
+    <a href="/dashboards/my_server">
+        <div class="icon">
+          <i class="fa fa-server"></i>
+        </div>
+      My Servers
+</a>  </li>
+
+<li>
+  <a href="/users/my_profile">
+      <div class="icon">
+        <i class="fa fa-user"></i>
+      </div>
+    My profile
+</a></li>
+
+        </ul>
+      </nav>
+
+    <main>
+
+        <nav class="navbar navbar-default navbar-main visible-xs">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/">
+                  <img alt="Holberton School" src="/assets/holberton-logo-simplified-d4e8a1e8bf5ad93c8c3ce32895b4b53749b477b7ba7342d7f064e6883bcd3be2.png" />
+</a>            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                  <li>
+    <a href="/dashboards/my_planning">
+      My planning
+</a>  </li>
+  <li>
+    <a href="/dashboards/my_current_projects">
+      My projects
+</a>  </li>
+  <li>
+    <a href="/dashboards/my_concepts">
+      My concepts
+</a>  </li>
+  <li>
+    <a href="/dashboards/my_batchmates">
+      My batchmates
+</a>  </li>
+  <li>
+    <a href="/dashboards/corrections_i_can_make">
+      QA reviews I can make
+</a>  </li>
+  <li>
+    <a href="/dashboards/my_captain_log">
+      My Captain's Logs
+</a>  </li>
+  <li>
+    <a href="/dashboards/my_officers">
+      My Officers
+</a>  </li>
+  <li>
+    <a href="/dashboards/my_speakers_of_the_day">
+      My Speakers of the day
+</a>  </li>
+  <li>
+    <a href="/dashboards/my_server">
+      My Servers
+</a>  </li>
+
+<li>
+  <a href="/users/my_profile">
+    My profile
+</a></li>
+
+              </ul>
+
+              <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Richard Sim <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a rel="nofollow" data-method="delete" href="/auth/sign_out">Log out</a></li>
+                  </ul>
+                </li>
+              </ul>
+
+            </div><!--/.nav-collapse -->
+          </div>
+        </nav>
+
+
+
+      <article class="">
+          <div class="alert alert-info sm-gap">You just released the optional tasks of this project. Have fun!</div>
+
+        
+<h1 class="gap">0x01. AirBnB clone - Web static</h1>
+
+<div id="project_id" style="display: none" data-project-id="268"></div>
+
+<p class="sm-gap">
+  <small>
+    <i class="fa fa-folder-open"></i>
+    Higher-level programming ― AirBnB clone
+  </small>
+</p>
+
+  <p>
+    <em>
+      <small>
+        <i class="fa fa-user"></i> by Guillaume, Full stack engineer
+      </small>
+    </em>
+  </p>
+
+
+
+  <p>
+    <small>
+      <i class="fa fa-calendar"></i>
+        Ongoing project - started 02-13-2017, must end by 02-16-2017 (in 1 day)
+        - <span id="student_task_done_percentage">you're 0</span>% done.
+    </small>
+  </p>
+
+  <p>
+    <small>
+      <i class="fa fa-check-square"></i>
+        <strong>Manual QA review must be done</strong>
+        (request it when you are done on the project)
+    </small>
+  </p>
+
+
+
+
+<article id="description" class="gap formatted-content">
+  <h2>Web static, what?</h2>
+
+<p>Now you have a command interpreter for managing your AirBnB objects, it&#39;s time to make them alive!</p>
+
+<p>Before developing a big and complex front-end, we will build step by step the web application. </p>
+
+<p>The first step is to &quot;design&quot; / &quot;sketch&quot; / &quot;prototype&quot; each elements:</p>
+
+<ul>
+<li>Create simple HTML static pages</li>
+<li>Style guide</li>
+<li>Fake contents</li>
+<li>No Javascript</li>
+<li>No data loaded from something</li>
+</ul>
+
+<h2>Readme</h2>
+
+<p>Before starting, please fork the repository <code>AirBnB_clone</code> from your partner if you were not the owner. Don&#39;t forget to keep it updated for the future!</p>
+
+<p>Read:</p>
+
+<ul>
+<li><a href="http://learn.shayhowe.com/html-css/">Learn to Code HTML &amp; CSS</a>, until <strong>Creating Lists</strong> included</li>
+<li><a href="https://www.codecademy.com/articles/html-inline-styles">Inline Styles in HTML</a></li>
+<li><a href="https://css-tricks.com/specifics-on-css-specificity/">Specifics on CSS Specificity</a></li>
+</ul>
+
+<p>As references
+- <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML">Introduction to HTML</a>
+- <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS">CSS</a>
+- <a href="https://developer.mozilla.org/en-US/">MDN</a></p>
+
+<h2>What you should learn from this project</h2>
+
+<p>At the end of this project you are expected to be able to explain to anyone, without the help of Google:</p>
+
+<ul>
+<li>What is HTML</li>
+<li>How to create a HTML page</li>
+<li>What is markup language</li>
+<li>What is the DOM</li>
+<li>What is an element / tag</li>
+<li>What is an attribute</li>
+<li>How the browser loads a webpage</li>
+<li>What is CSS</li>
+<li>How to add style to an element</li>
+<li>What is a class</li>
+<li>What is a selector</li>
+<li>How to calculate CSS Specificity Value</li>
+<li>What are Box properties in CSS</li>
+</ul>
+
+<h2>Requirements for HTML/CSS files</h2>
+
+<ul>
+<li>Allowed editors: <code>vi</code>, <code>vim</code>, <code>emacs</code></li>
+<li>All your files should end with a new line</li>
+<li>A <code>README.md</code> file, at the root of the folder of the project, is mandatory</li>
+<li>Your code should be W3C compliant and validate with <a href="https://github.com/holbertonschool/W3C-Validator">W3C-Validator</a></li>
+<li>All your CSS files should be in <code>styles</code> folder</li>
+<li>All your images should be in <code>images</code> folder</li>
+<li>You are not allowed to use <code>important!</code></li>
+</ul>
+
+</article>
+
+  <hr class="gap">
+  <h2 class="gap">Tasks</h2>
+  <section class="formatted-content">
+        <div data-role="task1421" data-position="14">
+            <div class=" clearfix gap" id="task-1421">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1421">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1421" data-toggle="modal" data-target="#task-1421-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1421-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "HTML valid or not? #0"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1421/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1421" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    0. HTML valid or not? #0
+    <span class="alert alert-warning mandatory-optional">
+      mandatory
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>In the following code, is it a valid markup HTML (valid XML, no <code>!Doctype</code> related)? Answer with <code>Yes</code> or <code>No</code>.</p>
+
+<pre><code>&lt;html&gt;&lt;/html&gt;
+</code></pre>
+
+<p>All your answers should be only one line in a file. No space before or after the answer.</p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_questions</code></li>
+        <li>File: <code>0-answer.txt</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1422" data-position="15">
+            <div class=" clearfix gap" id="task-1422">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1422">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1422" data-toggle="modal" data-target="#task-1422-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1422-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "HTML valid or not? #1"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1422/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1422" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    1. HTML valid or not? #1
+    <span class="alert alert-warning mandatory-optional">
+      mandatory
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>In the following code, is it a valid markup HTML (valid XML, no <code>!Doctype</code> related)? Answer with <code>Yes</code> or <code>No</code>.</p>
+
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>All your answers should be only one line in a file. No space before or after the answer.</p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_questions</code></li>
+        <li>File: <code>1-answer.txt</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1423" data-position="16">
+            <div class=" clearfix gap" id="task-1423">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1423">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1423" data-toggle="modal" data-target="#task-1423-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1423-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "HTML valid or not? #2"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1423/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1423" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    2. HTML valid or not? #2
+    <span class="alert alert-warning mandatory-optional">
+      mandatory
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>In the following code, is it a valid markup HTML (valid XML, no <code>!Doctype</code> related)? Answer with <code>Yes</code> or <code>No</code>.</p>
+
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>All your answers should be only one line in a file. No space before or after the answer.</p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_questions</code></li>
+        <li>File: <code>2-answer.txt</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1424" data-position="17">
+            <div class=" clearfix gap" id="task-1424">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1424">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1424" data-toggle="modal" data-target="#task-1424-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1424-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "HTML valid or not? #3"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1424/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1424" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    3. HTML valid or not? #3
+    <span class="alert alert-warning mandatory-optional">
+      mandatory
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>In the following code, is it a valid markup HTML (valid XML, no <code>!Doctype</code> related)? Answer with <code>Yes</code> or <code>No</code>.</p>
+
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;img src=&quot;logo.png&quot; /&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>All your answers should be only one line in a file. No space before or after the answer.</p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_questions</code></li>
+        <li>File: <code>3-answer.txt</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1425" data-position="18">
+            <div class=" clearfix gap" id="task-1425">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1425">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1425" data-toggle="modal" data-target="#task-1425-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1425-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "HTML valid or not? #4"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1425/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1425" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    4. HTML valid or not? #4
+    <span class="alert alert-warning mandatory-optional">
+      mandatory
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>In the following code, is it a valid markup HTML (valid XML, no <code>!Doctype</code> related)? Answer with <code>Yes</code> or <code>No</code>.</p>
+
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Holberton &lt;b&gt;School&lt;/h1&gt;&lt;/b&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>All your answers should be only one line in a file. No space before or after the answer.</p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_questions</code></li>
+        <li>File: <code>4-answer.txt</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1426" data-position="19">
+            <div class=" clearfix gap" id="task-1426">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1426">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1426" data-toggle="modal" data-target="#task-1426-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1426-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "HTML valid or not? #5"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1426/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1426" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    5. HTML valid or not? #5
+    <span class="alert alert-warning mandatory-optional">
+      mandatory
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>In the following code, is it a valid markup HTML (valid XML, no <code>!Doctype</code> related)? Answer with <code>Yes</code> or <code>No</code>.</p>
+
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;
+            &lt;a href=&quot;www.holbertonschool.com&#39;&gt;Holberton School&lt;/a&gt;
+        &lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>All your answers should be only one line in a file. No space before or after the answer.</p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_questions</code></li>
+        <li>File: <code>5-answer.txt</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1427" data-position="20">
+            <div class=" clearfix gap" id="task-1427">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1427">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1427" data-toggle="modal" data-target="#task-1427-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1427-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "HTML valid or not? #6"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1427/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1427" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    6. HTML valid or not? #6
+    <span class="alert alert-warning mandatory-optional">
+      mandatory
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>In the following code, is it a valid markup HTML (valid XML, no <code>!Doctype</code> related)? Answer with <code>Yes</code> or <code>No</code>.</p>
+
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;
+            &lt;a href=&quot;www.holbertonschool.com&quot;&gt;Holberton &lt;b&gt;School&lt;/b&gt;
+        &lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>All your answers should be only one line in a file. No space before or after the answer.</p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_questions</code></li>
+        <li>File: <code>6-answer.txt</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1428" data-position="21">
+            <div class=" clearfix gap" id="task-1428">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1428">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1428" data-toggle="modal" data-target="#task-1428-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1428-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "CSS valid or not? #0"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1428/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1428" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    7. CSS valid or not? #0
+    <span class="alert alert-warning mandatory-optional">
+      mandatory
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>In the following code, is it a valid CSS syntax? Answer with <code>Yes</code> or <code>No</code>.</p>
+
+<pre><code>body {
+    color: #FF0000;
+}
+</code></pre>
+
+<p>All your answers should be only one line in a file. No space before or after the answer.</p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_questions</code></li>
+        <li>File: <code>7-answer.txt</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1429" data-position="22">
+            <div class=" clearfix gap" id="task-1429">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1429">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1429" data-toggle="modal" data-target="#task-1429-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1429-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "CSS valid or not? #1"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1429/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1429" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    8. CSS valid or not? #1
+    <span class="alert alert-warning mandatory-optional">
+      mandatory
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>In the following code, is it a valid CSS syntax? Answer with <code>Yes</code> or <code>No</code>.</p>
+
+<pre><code>body {
+    color: #FF0000;
+}
+
+* {
+    font-size: 14px;
+}
+</code></pre>
+
+<p>All your answers should be only one line in a file. No space before or after the answer.</p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_questions</code></li>
+        <li>File: <code>8-answer.txt</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1430" data-position="23">
+            <div class=" clearfix gap" id="task-1430">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1430">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1430" data-toggle="modal" data-target="#task-1430-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1430-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "CSS valid or not? #2"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1430/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1430" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    9. CSS valid or not? #2
+    <span class="alert alert-warning mandatory-optional">
+      mandatory
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>In the following code, is it a valid CSS syntax? Answer with <code>Yes</code> or <code>No</code>.</p>
+
+<pre><code>body {
+    color: #FF0000;
+}
+
+* {
+    font-size: 14px;
+    font-weight: 400
+    text-align: center;
+}
+</code></pre>
+
+<p>All your answers should be only one line in a file. No space before or after the answer.</p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_questions</code></li>
+        <li>File: <code>9-answer.txt</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1431" data-position="24">
+            <div class=" clearfix gap" id="task-1431">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1431">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1431" data-toggle="modal" data-target="#task-1431-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1431-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "CSS valid or not? #3"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1431/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1431" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    10. CSS valid or not? #3
+    <span class="alert alert-warning mandatory-optional">
+      mandatory
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>In the following code, is it a valid CSS syntax? Answer with <code>Yes</code> or <code>No</code>.</p>
+
+<pre><code>body {
+    color: #FF0000;
+}
+
+* {
+    font-size: 14px;
+    text-align: center;
+
+    h1 {
+        margin: 30px;
+    }
+}
+</code></pre>
+
+<p>All your answers should be only one line in a file. No space before or after the answer.</p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_questions</code></li>
+        <li>File: <code>10-answer.txt</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1432" data-position="25">
+            <div class=" clearfix gap" id="task-1432">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1432">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1432" data-toggle="modal" data-target="#task-1432-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1432-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "CSS valid or not? #4"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1432/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1432" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    11. CSS valid or not? #4
+    <span class="alert alert-warning mandatory-optional">
+      mandatory
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>In the following code, is it a valid CSS syntax? Answer with <code>Yes</code> or <code>No</code>.</p>
+
+<pre><code>body {
+    color: #FF0000;
+}
+
+* {
+    font-size: 14px;
+    text-align: center;
+    margin: 30px 12px 4px;
+}
+</code></pre>
+
+<p>All your answers should be only one line in a file. No space before or after the answer.</p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_questions</code></li>
+        <li>File: <code>11-answer.txt</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1433" data-position="26">
+            <div class=" clearfix gap" id="task-1433">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1433">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1433" data-toggle="modal" data-target="#task-1433-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1433-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "CSS valid or not? #5"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1433/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1433" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    12. CSS valid or not? #5
+    <span class="alert alert-warning mandatory-optional">
+      mandatory
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>In the following code, is it a valid CSS syntax? Answer with <code>Yes</code> or <code>No</code>.</p>
+
+<pre><code>body {
+    color: #FF0000;
+}
+
+h1.title {
+    font-size: 16px;
+}
+</code></pre>
+
+<p>All your answers should be only one line in a file. No space before or after the answer.</p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_questions</code></li>
+        <li>File: <code>12-answer.txt</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1434" data-position="27">
+            <div class=" clearfix gap" id="task-1434">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1434">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1434" data-toggle="modal" data-target="#task-1434-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1434-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "CSS valid or not? #6"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1434/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1434" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    13. CSS valid or not? #6
+    <span class="alert alert-warning mandatory-optional">
+      mandatory
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>In the following code, is it a valid CSS syntax? Answer with <code>Yes</code> or <code>No</code>.</p>
+
+<pre><code>body {
+    color: #FF0000;
+}
+
+div.filters h2 {
+    font-size: 16px;
+}
+</code></pre>
+
+<p>All your answers should be only one line in a file. No space before or after the answer.</p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_questions</code></li>
+        <li>File: <code>13-answer.txt</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1435" data-position="28">
+            <div class=" clearfix gap" id="task-1435">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1435">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1435" data-toggle="modal" data-target="#task-1435-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1435-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "CSS valid or not? #7"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1435/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1435" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    14. CSS valid or not? #7
+    <span class="alert alert-warning mandatory-optional">
+      mandatory
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>In the following code, is it a valid CSS syntax? Answer with <code>Yes</code> or <code>No</code>.</p>
+
+<pre><code>body {
+    color: #FF0000;
+}
+
+div.filters p.title h2 span.text.big {
+    font-size: 20px;
+}
+</code></pre>
+
+<p>All your answers should be only one line in a file. No space before or after the answer.</p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_questions</code></li>
+        <li>File: <code>14-answer.txt</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1436" data-position="29">
+            <div class=" clearfix gap" id="task-1436">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1436">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1436" data-toggle="modal" data-target="#task-1436-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1436-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "CSS valid or not? #8"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1436/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1436" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    15. CSS valid or not? #8
+    <span class="alert alert-warning mandatory-optional">
+      mandatory
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>In the following code, is it a valid CSS syntax? Answer with <code>Yes</code> or <code>No</code>.</p>
+
+<pre><code>body {
+    color: #FF0000;
+}
+
+h3,
+div.full_text,
+div.small_text h4,
+div.filters p.title {
+    font-size: 20px;
+}
+</code></pre>
+
+<p>All your answers should be only one line in a file. No space before or after the answer.</p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_questions</code></li>
+        <li>File: <code>15-answer.txt</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1437" data-position="30">
+            <div class=" clearfix gap" id="task-1437">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1437">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1437" data-toggle="modal" data-target="#task-1437-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1437-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "CSS valid or not? #9"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1437/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1437" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    16. CSS valid or not? #9
+    <span class="alert alert-warning mandatory-optional">
+      mandatory
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>In the following code, is it a valid CSS syntax? Answer with <code>Yes</code> or <code>No</code>.</p>
+
+<pre><code>body {
+    color: #FF0000;
+}
+
+h3,
+div.full_text
+div.small_text h4
+div.filters p.title {
+    font-size: 20px;
+}
+</code></pre>
+
+<p>All your answers should be only one line in a file. No space before or after the answer.</p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_questions</code></li>
+        <li>File: <code>16-answer.txt</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1438" data-position="31">
+            <div class=" clearfix gap" id="task-1438">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1438">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1438" data-toggle="modal" data-target="#task-1438-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1438-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "Red or not? #0"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1438/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1438" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    17. Red or not? #0
+    <span class="alert alert-warning mandatory-optional">
+      mandatory
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>In the following code, the text <code>Holberton School</code> is it red? Answer with <code>Yes</code> or <code>No</code>.</p>
+
+<pre><code>css:
+h1 {
+    color: red;
+}
+
+html:
+&lt;h1&gt;Holberton School&lt;/h1&gt;
+</code></pre>
+
+<p>All your answers should be only one line in a file. No space before or after the answer.</p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_questions</code></li>
+        <li>File: <code>17-answer.txt</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1439" data-position="32">
+            <div class=" clearfix gap" id="task-1439">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1439">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1439" data-toggle="modal" data-target="#task-1439-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1439-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "Red or not? #1"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1439/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1439" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    18. Red or not? #1
+    <span class="alert alert-warning mandatory-optional">
+      mandatory
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>In the following code, the text <code>Holberton School</code> is it red? Answer with <code>Yes</code> or <code>No</code>.</p>
+
+<pre><code>css:
+h2 {
+    color: red;
+}
+
+html:
+&lt;h1&gt;Holberton School&lt;/h1&gt;
+</code></pre>
+
+<p>All your answers should be only one line in a file. No space before or after the answer.</p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_questions</code></li>
+        <li>File: <code>18-answer.txt</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1440" data-position="33">
+            <div class=" clearfix gap" id="task-1440">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1440">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1440" data-toggle="modal" data-target="#task-1440-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1440-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "Red or not? #2"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1440/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1440" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    19. Red or not? #2
+    <span class="alert alert-warning mandatory-optional">
+      mandatory
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>In the following code, the text <code>Holberton School</code> is it red? Answer with <code>Yes</code> or <code>No</code>.</p>
+
+<pre><code>css:
+h1.title {
+    color: red;
+}
+
+html:
+&lt;h1&gt;Holberton School&lt;/h1&gt;
+</code></pre>
+
+<p>All your answers should be only one line in a file. No space before or after the answer.</p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_questions</code></li>
+        <li>File: <code>19-answer.txt</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1441" data-position="34">
+            <div class=" clearfix gap" id="task-1441">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1441">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1441" data-toggle="modal" data-target="#task-1441-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1441-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "Red or not? #3"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1441/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1441" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    20. Red or not? #3
+    <span class="alert alert-warning mandatory-optional">
+      mandatory
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>In the following code, the text <code>Holberton School</code> is it red? Answer with <code>Yes</code> or <code>No</code>.</p>
+
+<pre><code>css:
+h1 div.title {
+    color: red;
+}
+
+html:
+&lt;h1&gt;Holberton School&lt;/h1&gt;
+</code></pre>
+
+<p>All your answers should be only one line in a file. No space before or after the answer.</p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_questions</code></li>
+        <li>File: <code>20-answer.txt</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1442" data-position="35">
+            <div class=" clearfix gap" id="task-1442">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1442">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1442" data-toggle="modal" data-target="#task-1442-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1442-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "Red or not? #4"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1442/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1442" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    21. Red or not? #4
+    <span class="alert alert-warning mandatory-optional">
+      mandatory
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>In the following code, the text <code>Holberton School</code> is it red? Answer with <code>Yes</code> or <code>No</code>.</p>
+
+<pre><code>css:
+h3 span.text,
+h1,
+div.title {
+    color: red;
+}
+
+html:
+&lt;h1&gt;Holberton School&lt;/h1&gt;
+</code></pre>
+
+<p>All your answers should be only one line in a file. No space before or after the answer.</p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_questions</code></li>
+        <li>File: <code>21-answer.txt</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1443" data-position="36">
+            <div class=" clearfix gap" id="task-1443">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1443">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1443" data-toggle="modal" data-target="#task-1443-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1443-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "Red or not? #5"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1443/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1443" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    22. Red or not? #5
+    <span class="alert alert-warning mandatory-optional">
+      mandatory
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>In the following code, the text <code>Holberton School</code> is it red? Answer with <code>Yes</code> or <code>No</code>.</p>
+
+<pre><code>css:
+h1 {
+    color: green;
+}
+
+span.my_title {
+    color: red;
+}
+
+html:
+&lt;h1&gt;
+    &lt;span class=&quot;my_title&quot;&gt;Holberton School&lt;/span&gt;
+&lt;/h1&gt;
+</code></pre>
+
+<p>All your answers should be only one line in a file. No space before or after the answer.</p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_questions</code></li>
+        <li>File: <code>22-answer.txt</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1444" data-position="37">
+            <div class=" clearfix gap" id="task-1444">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1444">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1444" data-toggle="modal" data-target="#task-1444-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1444-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "Red or not? #6"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1444/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1444" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    23. Red or not? #6
+    <span class="alert alert-warning mandatory-optional">
+      mandatory
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>In the following code, the text <code>Holberton School</code> is it red? Answer with <code>Yes</code> or <code>No</code>.</p>
+
+<pre><code>css:
+h1 .my_title {
+    color: green;
+}
+
+.my_title {
+    color: red;
+}
+
+html:
+&lt;h1&gt;
+    &lt;span class=&quot;my_title&quot;&gt;Holberton School&lt;/span&gt;
+&lt;/h1&gt;
+</code></pre>
+
+<p>All your answers should be only one line in a file. No space before or after the answer.</p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_questions</code></li>
+        <li>File: <code>23-answer.txt</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1408" data-position="101">
+            <div class=" clearfix gap" id="task-1408">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1408">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1408" data-toggle="modal" data-target="#task-1408-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1408-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "Inline styling"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1408/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1408" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    24. Inline styling
+    <span class="alert alert-warning mandatory-optional">
+      mandatory
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>Write an HTML page that displays a header and footer.</p>
+
+<p>Layout:</p>
+
+<ul>
+<li>Body:
+
+<ul>
+<li>no margin</li>
+<li>no padding</li>
+</ul></li>
+<li>Header:
+
+<ul>
+<li>color #FF0000 (red)</li>
+<li>height: 70px</li>
+<li>width: 100%</li>
+</ul></li>
+<li>Footer:
+
+<ul>
+<li>color #00FF00 (green)</li>
+<li>height: 60px</li>
+<li>width: 100%</li>
+<li>text <code>Holberton School</code> center vertically and horizontally</li>
+<li>always at the bottom at the page</li>
+</ul></li>
+</ul>
+
+<p>Requirements:</p>
+
+<ul>
+<li>You must use <code>header</code> and <code>footer</code> tags</li>
+<li>You are not allowed to import any files</li>
+<li>You are not allowed to have <code>style</code> in the <code>head</code> tag</li>
+<li>You must define styles in each tag</li>
+</ul>
+
+<p><img src="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/0-index.png" alt="0-index"></p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_static</code></li>
+        <li>File: <code>0-index.html</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1409" data-position="102">
+            <div class=" clearfix gap" id="task-1409">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1409">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1409" data-toggle="modal" data-target="#task-1409-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1409-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "Head styling"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1409/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1409" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    25. Head styling
+    <span class="alert alert-warning mandatory-optional">
+      mandatory
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>Write an HTML page that displays a header and footer by using <code>style</code> tag in <code>head</code> (same as <code>0-index.html</code>)</p>
+
+<p>Requirements:</p>
+
+<ul>
+<li>You must use <code>header</code> and <code>footer</code> tags</li>
+<li>You are not allowed to import any files</li>
+<li>You are not allowed to define styles in each tag</li>
+<li>You must use <code>style</code> in the <code>head</code> tag</li>
+</ul>
+
+<p>The layout must be exactly the same as <code>0-index.html</code></p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_static</code></li>
+        <li>File: <code>1-index.html</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1410" data-position="103">
+            <div class=" clearfix gap" id="task-1410">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1410">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1410" data-toggle="modal" data-target="#task-1410-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1410-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "CSS files"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1410/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1410" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    26. CSS files
+    <span class="alert alert-warning mandatory-optional">
+      mandatory
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>Write an HTML page that displays a header and footer by using CSS files (same as <code>1-index.html</code>)</p>
+
+<p>Requirements:</p>
+
+<ul>
+<li>You must use <code>header</code> and <code>footer</code> tags</li>
+<li>You are not allowed to define styles in each tag</li>
+<li>You are not allowed to use <code>style</code> in the <code>head</code> tag</li>
+<li>You must have 3 CSS files:
+
+<ul>
+<li><code>styles/2-common.css</code>: for global styles (here, for <code>body</code> style)</li>
+<li><code>styles/2-header.css</code>: for header styles</li>
+<li><code>styles/2-footer.css</code>: for footer styles</li>
+</ul></li>
+</ul>
+
+<p>The layout must be exactly the same as <code>1-index.html</code></p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_static</code></li>
+        <li>File: <code>2-index.html, styles/2-common.css, styles/2-header.css, styles/2-footer.css</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1411" data-position="104">
+            <div class=" clearfix gap" id="task-1411">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1411">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1411" data-toggle="modal" data-target="#task-1411-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1411-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "Zoning done!"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1411/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1411" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    27. Zoning done!
+    <span class="alert alert-warning mandatory-optional">
+      mandatory
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>Write an HTML page that displays a header and footer by using CSS files (same as <code>2-index.html</code>)</p>
+
+<p>Layout:</p>
+
+<ul>
+<li>Common:
+
+<ul>
+<li>no margin</li>
+<li>no padding</li>
+<li>font color #484848</li>
+<li>font size 14px</li>
+<li>font family <code>Circular,&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif;</code></li>
+<li><a href="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/icon.png">icon</a> in the browser tab</li>
+</ul></li>
+<li>Header:
+
+<ul>
+<li>color white</li>
+<li>height: 70px</li>
+<li>width: 100%</li>
+<li>border bottom 1px #CCCCCC</li>
+<li><a href="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/logo.png">logo</a> align on left (20px space at the left)</li>
+</ul></li>
+<li>Footer:
+
+<ul>
+<li>color white</li>
+<li>height: 60px</li>
+<li>width: 100%</li>
+<li>border top 1px #CCCCCC</li>
+<li>text <code>Holberton School</code> center vertically and horizontally</li>
+<li>always at the bottom at the page</li>
+</ul></li>
+</ul>
+
+<p>Requirements:</p>
+
+<ul>
+<li>You must use <code>header</code> and <code>footer</code> tags</li>
+<li>You are not allowed to define styles in each tag</li>
+<li>You are not allowed to use <code>img</code> tag</li>
+<li>You are not allowed to use <code>style</code> in the <code>head</code> tag</li>
+<li>All images must be stored in <code>images</code> folder</li>
+<li>You must have 3 CSS files:
+
+<ul>
+<li><code>styles/3-common.css</code>: for global styles (here, for <code>body</code> style)</li>
+<li><code>styles/3-header.css</code>: for header styles</li>
+<li><code>styles/3-footer.css</code>: for footer styles</li>
+</ul></li>
+</ul>
+
+<p><img src="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/3-index.png" alt="3-index"></p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_static</code></li>
+        <li>File: <code>3-index.html, styles/3-common.css, styles/3-header.css, styles/3-footer.css, images/</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1412" data-position="105">
+            <div class=" clearfix gap" id="task-1412">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1412">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1412" data-toggle="modal" data-target="#task-1412-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1412-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "Search!"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1412/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1412" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    28. Search!
+    <span class="alert alert-warning mandatory-optional">
+      mandatory
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>Write an HTML page that displays a header, footer and a filters box with a search button.</p>
+
+<p>Layout: (based on <code>3-index.html</code>)</p>
+
+<ul>
+<li>Container:
+
+<ul>
+<li>between <code>header</code> and <code>footer</code> tags, add a <code>div</code>:
+
+<ul>
+<li>classname: <code>container</code></li>
+<li>max width 1000px</li>
+<li>margin top and bottom 30px</li>
+<li>center vertically</li>
+</ul></li>
+</ul></li>
+<li>Filter section: 
+
+<ul>
+<li>tag <code>section</code></li>
+<li>classname <code>filters</code></li>
+<li>inside the <code>.container</code></li>
+<li>color white</li>
+<li>height: 70px</li>
+<li>width: 100% of the container</li>
+<li>border 1px #DDDDDD with radius 4px</li>
+</ul></li>
+<li>Button search:
+
+<ul>
+<li>tag <code>button</code></li>
+<li>text <code>Search</code></li>
+<li>inside the section filters</li>
+<li>color #FF5A5F</li>
+<li>height: 48px</li>
+<li>width: 20% of the section filters</li>
+<li>center horizontally and at 30px of the right border</li>
+<li>change opacity to 90% when the mouse is on the button</li>
+</ul></li>
+</ul>
+
+<p>Requirements:</p>
+
+<ul>
+<li>You must use <code>header</code>, <code>footer</code>, <code>section</code>, <code>button</code> tags</li>
+<li>You are not allowed to define styles in each tag</li>
+<li>You are not allowed to use <code>img</code> tag</li>
+<li>You are not allowed to use <code>style</code> in the <code>head</code> tag</li>
+<li>All images must be stored in <code>images</code> folder</li>
+<li>You must have 4 CSS files:
+
+<ul>
+<li><code>styles/4-common.css</code>: for global styles (<code>body</code> and <code>.container</code> styles)</li>
+<li><code>styles/3-header.css</code>: for header styles</li>
+<li><code>styles/3-footer.css</code>: for footer styles</li>
+<li><code>styles/4-filters.css</code>: for filters styles</li>
+</ul></li>
+<li><code>4-index.html</code> <strong>won&#39;t be W3C valid</strong>, don&#39;t worry, it&#39;s temporary</li>
+</ul>
+
+<p><img src="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/4-index.png" alt="4-index"></p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_static</code></li>
+        <li>File: <code>4-index.html, styles/4-common.css, styles/3-header.css, styles/3-footer.css, styles/4-filters.css, images/</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1413" data-position="106">
+            <div class=" clearfix gap" id="task-1413">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1413">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1413" data-toggle="modal" data-target="#task-1413-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1413-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "More filters"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1413/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1413" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    29. More filters
+    <span class="alert alert-warning mandatory-optional">
+      mandatory
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>Write an HTML page that displays a header, footer and a filters box.</p>
+
+<p>Layout: (based on <code>4-index.html</code>)</p>
+
+<ul>
+<li>Locations and Amenities filters:
+
+<ul>
+<li>tag <code>div</code></li>
+<li>classname <code>locations</code> for location tag and <code>amenities</code> for the other</li>
+<li>inside the section filters (same level as the <code>button</code> Search)</li>
+<li>height: 100% of the section filters</li>
+<li>width: 25% of the section filters</li>
+<li>border right #DDDDDD 1px only for the first left filter</li>
+<li>contains a title:
+
+<ul>
+<li>tag <code>h3</code></li>
+<li>font weight 600<br></li>
+<li>text <code>States</code> or <code>Amenities</code></li>
+</ul></li>
+<li>contains a subtitle:
+
+<ul>
+<li>tag <code>h4</code></li>
+<li>font weight 400<br></li>
+<li>font size 14px</li>
+<li>text with fake contents</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>Requirements:</p>
+
+<ul>
+<li>You must use <code>header</code>, <code>footer</code>, <code>section</code>, <code>button</code>, <code>h3</code>, <code>h4</code> tags</li>
+<li>You are not allowed to define styles in each tag</li>
+<li>You are not allowed to use <code>img</code> tag</li>
+<li>You are not allowed to use <code>style</code> in the <code>head</code> tag</li>
+<li>All images must be stored in <code>images</code> folder</li>
+<li>You must have 4 CSS files:
+
+<ul>
+<li><code>styles/4-common.css</code>: for global styles (<code>body</code> and <code>.container</code> styles)</li>
+<li><code>styles/3-header.css</code>: for header styles</li>
+<li><code>styles/3-footer.css</code>: for footer styles</li>
+<li><code>styles/5-filters.css</code>: for filters styles</li>
+</ul></li>
+</ul>
+
+<p><img src="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/5-index.png" alt="5-index"></p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_static</code></li>
+        <li>File: <code>5-index.html, styles/4-common.css, styles/3-header.css, styles/3-footer.css, styles/5-filters.css, images/</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1414" data-position="107">
+            <div class=" clearfix gap" id="task-1414">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1414">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1414" data-toggle="modal" data-target="#task-1414-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1414-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "It&#39;s (h)over"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1414/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1414" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    30. It&#39;s (h)over
+    <span class="alert alert-warning mandatory-optional">
+      mandatory
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>Write an HTML page that displays a header, footer and a filters box with dropdown.</p>
+
+<p>Layout: (based on <code>5-index.html</code>)</p>
+
+<ul>
+<li>Update Locations and Amenities filters to display a contextual dropdown when the mouse is on the filter <code>div</code>: 
+
+<ul>
+<li>tag <code>ul</code></li>
+<li>classname <code>popover</code></li>
+<li>text should be fake now</li>
+<li>inside each <code>div</code></li>
+<li>not displayed by default</li>
+<li>color #FAFAFA</li>
+<li>width same as the <code>div</code> filter</li>
+<li>border #DDDDDD 1px with border radius 4px</li>
+<li>no list display</li>
+<li>Location filter has 2 levels of <code>ul</code>/<code>li</code>:
+
+<ul>
+<li>state -&gt; cities</li>
+<li>state name must be display in a <code>h2</code> tag (font size 16px)</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>Requirements:</p>
+
+<ul>
+<li>You must use <code>header</code>, <code>footer</code>, <code>section</code>, <code>button</code>, <code>h3</code>, <code>h4</code>, <code>ul</code>, <code>li</code> tags</li>
+<li>You are not allowed to define styles in each tag</li>
+<li>You are not allowed to use <code>img</code> tag</li>
+<li>You are not allowed to use <code>style</code> in the <code>head</code> tag</li>
+<li>All images must be stored in <code>images</code> folder</li>
+<li>You must have 4 CSS files:
+
+<ul>
+<li><code>styles/4-common.css</code>: for global styles (<code>body</code> and <code>.container</code> styles)</li>
+<li><code>styles/3-header.css</code>: for header styles</li>
+<li><code>styles/3-footer.css</code>: for footer styles</li>
+<li><code>styles/6-filters.css</code>: for filters styles</li>
+</ul></li>
+</ul>
+
+<p><img src="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/6-index_0.png" alt="6-index_0">
+<img src="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/6-index_1.png" alt="6-index_1"></p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_static</code></li>
+        <li>File: <code>6-index.html, styles/4-common.css, styles/3-header.css, styles/3-footer.css, styles/6-filters.css, images/</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1415" data-position="108">
+            <div class=" clearfix gap" id="task-1415">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1415">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1415" data-toggle="modal" data-target="#task-1415-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1415-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "Display results"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1415/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1415" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    31. Display results
+    <span class="alert alert-warning mandatory-optional">
+      mandatory
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>Write an HTML page that displays a header, footer, a filters box with dropdown and results.</p>
+
+<p>Layout: (based on <code>6-index.html</code>)</p>
+
+<ul>
+<li>Add Places section:
+
+<ul>
+<li>tag <code>section</code></li>
+<li>classname <code>places</code></li>
+<li>same level as the filters section</li>
+<li>contains a title:
+
+<ul>
+<li>tag <code>h1</code></li>
+<li>text <code>Places</code></li>
+<li>align in the top left</li>
+<li>font size 30px</li>
+</ul></li>
+<li>contains multiple &quot;Places&quot; as listing (horizontal or vertical) describe by:
+
+<ul>
+<li>tag <code>article</code></li>
+<li>width 390px</li>
+<li>padding and margin 20px</li>
+<li>border #FF5A5F 1px with radius 4px</li>
+<li>contains the place name:
+
+<ul>
+<li>tag <code>h2</code></li>
+<li>font size 30px</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>Requirements:</p>
+
+<ul>
+<li>You must use <code>header</code>, <code>footer</code>, <code>section</code>, <code>article</code>, <code>button</code>, <code>h1</code>, <code>h2</code>, <code>h3</code>, <code>h4</code>, <code>ul</code>, <code>li</code> tags</li>
+<li>You are not allowed to define styles in each tag</li>
+<li>You are not allowed to use <code>img</code> tag</li>
+<li>You are not allowed to use <code>style</code> in the <code>head</code> tag</li>
+<li>All images must be stored in <code>images</code> folder</li>
+<li>You must have 5 CSS files:
+
+<ul>
+<li><code>styles/4-common.css</code>: for global styles (<code>body</code> and <code>.container</code> styles)</li>
+<li><code>styles/3-header.css</code>: for header styles</li>
+<li><code>styles/3-footer.css</code>: for footer styles</li>
+<li><code>styles/6-filters.css</code>: for filters styles</li>
+<li><code>styles/7-places.css</code>: for places styles</li>
+</ul></li>
+</ul>
+
+<p><img src="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/7-index.png" alt="7-index"></p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_static</code></li>
+        <li>File: <code>7-index.html, styles/4-common.css, styles/3-header.css, styles/3-footer.css, styles/6-filters.css, styles/7-places.css, images/</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1416" data-position="109">
+            <div class=" clearfix gap" id="task-1416">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1416">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1416" data-toggle="modal" data-target="#task-1416-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1416-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "More details"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1416/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1416" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    32. More details
+    <span class="alert alert-warning mandatory-optional">
+      mandatory
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>Write an HTML page that displays a header, footer, a filters box with dropdown and results.</p>
+
+<p>Layout: (based on <code>7-index.html</code>)</p>
+
+<p>Add more information to a Place <code>article</code>:</p>
+
+<ul>
+<li>Price by night:
+
+<ul>
+<li>tag <code>div</code></li>
+<li>classname <code>price_by_night</code></li>
+<li>same level as the place name</li>
+<li>font color #FF5A5F</li>
+<li>border #FF5A5F 4px rounded</li>
+<li>min width 60px</li>
+<li>height 60px</li>
+<li>font size 30px</li>
+<li>align on the top right (with space)</li>
+</ul></li>
+<li>Informations section:
+
+<ul>
+<li>tag <code>div</code></li>
+<li>classname <code>informations</code></li>
+<li>height 80px</li>
+<li>border top and bottom #DDDDDD 1px</li>
+<li>contains:
+
+<ul>
+<li>Number of guests:
+
+<ul>
+<li>tag <code>div</code></li>
+<li>classname <code>max_guest</code></li>
+<li>width 100px</li>
+<li>fake text</li>
+<li><a href="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/icon_group.png">icon</a></li>
+</ul></li>
+<li>Number of bedrooms:
+
+<ul>
+<li>tag <code>div</code></li>
+<li>classname <code>number_rooms</code></li>
+<li>width 100px</li>
+<li>fake text</li>
+<li><a href="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/icon_bed.png">icon</a></li>
+</ul></li>
+<li>Number of bathrooms:
+
+<ul>
+<li>tag <code>div</code></li>
+<li>classname <code>number_bathrooms</code></li>
+<li>width 100px</li>
+<li>fake text</li>
+<li><a href="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/icon_bath.png">icon</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>User section:
+
+<ul>
+<li>tag <code>div</code></li>
+<li>classname <code>user</code></li>
+<li>text <code>Owner: &lt;fake text&gt;</code></li>
+<li><code>Owner</code> text should be in bold</li>
+</ul></li>
+<li>Description section:
+
+<ul>
+<li>tag <code>div</code></li>
+<li>classname <code>description</code></li>
+</ul></li>
+</ul>
+
+<p>Requirements:</p>
+
+<ul>
+<li>You must use <code>header</code>, <code>footer</code>, <code>section</code>, <code>article</code>, <code>button</code>, <code>h1</code>, <code>h2</code>, <code>h3</code>, <code>h4</code>, <code>ul</code>, <code>li</code> tags</li>
+<li>You are not allowed to define styles in each tag</li>
+<li>You are not allowed to use <code>img</code> tag</li>
+<li>You are not allowed to use <code>style</code> in the <code>head</code> tag</li>
+<li>All images must be stored in <code>images</code> folder</li>
+<li>You must have 5 CSS files:
+
+<ul>
+<li><code>styles/4-common.css</code>: for global styles (<code>body</code> and <code>.container</code> styles)</li>
+<li><code>styles/3-header.css</code>: for header styles</li>
+<li><code>styles/3-footer.css</code>: for footer styles</li>
+<li><code>styles/6-filters.css</code>: for filters styles</li>
+<li><code>styles/8-places.css</code>: for places styles</li>
+</ul></li>
+</ul>
+
+<p><img src="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/8-index.png" alt="8-index"></p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_static</code></li>
+        <li>File: <code>8-index.html, styles/4-common.css, styles/3-header.css, styles/3-footer.css, styles/6-filters.css, styles/8-places.css, images/</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1417" data-position="110">
+            <div class=" clearfix gap" id="task-1417">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1417">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1417" data-toggle="modal" data-target="#task-1417-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1417-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "Full details"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1417/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1417" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    33. Full details
+    <span class="alert alert-info mandatory-optional">
+      #advanced
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>Write an HTML page that displays a header, footer, a filters box with dropdown and results.</p>
+
+<p>Layout: (based on <code>8-index.html</code>)</p>
+
+<p>Add more information to a Place <code>article</code>:</p>
+
+<ul>
+<li>List of Amenities:
+
+<ul>
+<li>tag <code>div</code></li>
+<li>classname <code>amenities</code></li>
+<li>margin top 40px</li>
+<li>contains:
+
+<ul>
+<li>title:
+
+<ul>
+<li>tag <code>h2</code></li>
+<li>text <code>Amenities</code></li>
+<li>font size 16px</li>
+<li>border bottom #DDDDDD 1px</li>
+</ul></li>
+<li>list of amenities:
+
+<ul>
+<li>tag <code>ul</code> / <code>li</code></li>
+<li>no list style</li>
+<li>icons on the left: <a href="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/icon_pets.png">Pet friendly</a>, <a href="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/icon_tv.png">TV</a>, <a href="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/icon_wifi.png">Wifi</a>, etc... feel free to add more</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>List of Reviews:
+
+<ul>
+<li>tag <code>div</code></li>
+<li>classname <code>reviews</code></li>
+<li>margin top 40px</li>
+<li>contains:
+
+<ul>
+<li>title:
+
+<ul>
+<li>tag <code>h2</code></li>
+<li>text <code>Reviews</code></li>
+<li>font size 16px</li>
+<li>border bottom #DDDDDD 1px</li>
+</ul></li>
+<li>list of review:
+
+<ul>
+<li>tag <code>ul</code> / <code>li</code></li>
+<li>no list style</li>
+<li>a review is described by:
+
+<ul>
+<li><code>h3</code> tag for the user/date description (font size 14px). Ex: &quot;From Bob Dylan the 27th January 2017&quot; </li>
+<li><code>p</code> tag for the text (font size 12px)</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>Requirements:</p>
+
+<ul>
+<li>You must use <code>header</code>, <code>footer</code>, <code>section</code>, <code>article</code>, <code>button</code>, <code>h1</code>, <code>h2</code>, <code>h3</code>, <code>h4</code>, <code>ul</code>, <code>li</code> tags</li>
+<li>You are not allowed to define styles in each tag</li>
+<li>You are not allowed to use <code>img</code> tag</li>
+<li>You are not allowed to use <code>style</code> in the <code>head</code> tag</li>
+<li>All images must be stored in <code>images</code> folder</li>
+<li>You must have 5 CSS files:
+
+<ul>
+<li><code>styles/4-common.css</code>: for global styles (<code>body</code> and <code>.container</code> styles)</li>
+<li><code>styles/3-header.css</code>: for header styles</li>
+<li><code>styles/3-footer.css</code>: for footer styles</li>
+<li><code>styles/6-filters.css</code>: for filters styles</li>
+<li><code>styles/8-places.css</code>: for places styles</li>
+</ul></li>
+</ul>
+
+<p><img src="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/100-index.png" alt="100-index"></p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_static</code></li>
+        <li>File: <code>100-index.html, styles/4-common.css, styles/3-header.css, styles/3-footer.css, styles/6-filters.css, styles/100-places.css, images/</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1418" data-position="111">
+            <div class=" clearfix gap" id="task-1418">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1418">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1418" data-toggle="modal" data-target="#task-1418-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1418-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "Flex"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1418/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1418" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    34. Flex
+    <span class="alert alert-info mandatory-optional">
+      #advanced
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>Improve the Places section by using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes">Flexible boxes</a> for all Place articles</p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_static</code></li>
+        <li>File: <code>101-index.html, styles/4-common.css, styles/3-header.css, styles/3-footer.css, styles/6-filters.css, styles/101-places.css, images/</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1419" data-position="112">
+            <div class=" clearfix gap" id="task-1419">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1419">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1419" data-toggle="modal" data-target="#task-1419-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1419-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "Responsive design"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1419/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1419" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    35. Responsive design
+    <span class="alert alert-info mandatory-optional">
+      #advanced
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>Improve the page by adding <a href="https://developer.mozilla.org/en-US/Apps/Progressive/Responsive">responsive design</a> to display correctly in mobile or small screens</p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_static</code></li>
+        <li>File: <code>102-index.html, styles/102-common.css, styles/102-header.css, styles/102-footer.css, styles/102-filters.css, styles/102-places.css, images/</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+        <div data-role="task1420" data-position="113">
+            <div class=" clearfix gap" id="task-1420">
+<span id="user_id" data-id="100"></span>
+
+    <div class="student_task_controls">
+      
+      <!-- button Done -->
+        <button class="student_task_done btn btn-default no" data-task-id="1420">
+          <span class="no"><i class="fa fa-square-o"></i></span>
+          <span class="yes"><i class="fa fa-check-square-o"></i></span>
+          <span class="pending"><i class="fa fa-spinner fa-pulse"></i></span>
+          Done<span class="no pending">?</span><span class="yes">!</span>
+        </button>
+        <br>
+      
+      <!-- button Who is done? -->
+      <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1420" data-toggle="modal" data-target="#task-1420-users-done-modal">
+        Who is done?
+      </button>
+      <div class="modal fade users-done-modal" id="task-1420-users-done-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Batchmates who are done with "Accessibility"</h4>
+            </div>
+            <div class="modal-body">
+              <div class="list-group">
+              </div>
+                  <a class="btn btn-default btn-sm student_task_help" data-confirm="Are you sure you wish to notify people?" href="/tasks/1420/mark_as_help">Help!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- button Help! / Canel help -->
+          <button class="student_task_help btn btn-default btn-sm" data-task-id="1420" >
+            Help!
+          </button>
+    </div>
+
+  <h4 class="task">
+    36. Accessibility
+    <span class="alert alert-info mandatory-optional">
+      #advanced
+    </span>
+  </h4>
+
+
+  <!-- Progress vs Score -->
+
+  
+
+  <p>Improve the page by adding <a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility">Accessibility support</a></p>
+
+
+    <p class="sm-gap"><strong>Repo:</strong></p>
+    <ul>
+      <li>GitHub repository: <code>AirBnB_clone</code></li>
+        <li>Directory: <code>web_static</code></li>
+        <li>File: <code>103-index.html, styles/103-common.css, styles/103-header.css, styles/103-footer.css, styles/103-filters.css, styles/103-places.css, images/</code></li>
+    </ul>
+
+
+
+  
+      
+</div>
+
+        </div>
+  </section>
+
+
+
+
+
+
+      </article>
+
+    </main>
+
+
+
+
+
+    
+
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-67152800-6', 'auto');
+        ga('send', 'pageview');
+      </script>
+
+  </body>
+</html>
