@@ -20,7 +20,11 @@
     width:20%;
     border:none;
     text-align:center;
-    opacity:90%;
     border-radius:4px;
     position: absolute;
+    opacity:1.0;
+}
+
+.filters button:hover{
+    opacity:0.9;
 }
