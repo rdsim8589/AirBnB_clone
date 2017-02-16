@@ -8,8 +8,10 @@
 
 }
 
-.filters button{
+button{
     background-color: #FF5A5F;
+    float:right;
+    right:30px;
     margin: auto;
     height:48px;
     width:20%;
