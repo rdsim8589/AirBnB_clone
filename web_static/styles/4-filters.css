@@ -4,9 +4,12 @@
     width:100%;
     border:1px solid #DDDDDD;
     border-radius:4px;
+    position: relative;
 }
 
-button{
+.filters button{
+    font-size:18px;
+    color:white;
     background-color: #FF5A5F;
     top:0;
     bottom:0;
