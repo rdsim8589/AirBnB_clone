@@ -1,8 +1,15 @@
-.filter{
+.filters{
     background-color:white;
     height:70px;
     width:100%;
     border:1px solid #DDDDDD;
     border-radius:4px;
 
+}
+
+.filters button{
+    color: #FF5A5F;
+    height:48px;
+    width:20%;
+    text-align:center;
 }
