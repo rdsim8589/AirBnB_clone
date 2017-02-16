@@ -8,7 +8,8 @@
 }
 
 .filters button{
-    color: #FF5A5F;
+    background-color: #FF5A5F;
+    margin: auto;
     height:48px;
     width:20%;
     text-align:center;
