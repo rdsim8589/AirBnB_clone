@@ -21,4 +21,5 @@ button{
     text-align:center;
     opacity:90%;
     border-radius:4px;
+    position: absolute;
 }
