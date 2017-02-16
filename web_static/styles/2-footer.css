@@ -1,9 +1,11 @@
 footer{
     background-color:#00FF00;
-    height:70px;
-    width:100%;
+    border-bottom-color:#CCCCCC
+    border-bottom-width:1px
     bottom:0;
+    height:70px;
+    line-height:60pt;
     position:fixed;
     text-align:center;
-    line-height:60pt;
+    width:100%;
 }
