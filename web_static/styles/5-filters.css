@@ -1,5 +1,5 @@
-.locations{    
-    border-right: solid #DDDDDD 1px 
+.locations{
+    border-right: solid #DDDDDD 1px;
 }
 .amenities{
 
@@ -18,7 +18,6 @@ section .locations{
 }
 
 .subtitle{
-    margins: ;
     font-weight:400;
     font-size:14px;
 }
