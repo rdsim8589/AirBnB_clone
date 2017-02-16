@@ -7,9 +7,10 @@
 
 }
 
-button.filters{
+.filters button{
     color: #FF5A5F;
     height:48px;
     width:20%;
     text-align:center;
+    opacity:90%;
 }
