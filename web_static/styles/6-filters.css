@@ -12,6 +12,7 @@ section .locations{
     width:25%;
     top:0;
     bottom:0;
+    word-wrap:break-word;
 }
 .title{
     font-weight:600;
@@ -20,6 +21,7 @@ section .locations{
 .subtitle{
     font-weight:400;
     font-size:14px;
+    margin-bottom:1px;
 }
 .filters{
     background-color:white;
@@ -66,25 +68,25 @@ section .locations{
     box-shadow: 1px 3px 4px rgba(5, 5, 5, 0.1);
     line-height: 2.0;
     opacity: 1.0;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
 }*/
+
+
 .popover{
     position:absolute;
     max-height: 25em;
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
     background-color:#FAFAFA;
     margin: 0 -3.4em;
-    overflow-y: scroll;
     border:#DDDDDD 1px;
     border-radius: 4px;
     display:none;
-    overflow-y: scroll;
-    width: 100%;
+    width: 34%;
 }
 .locations:hover .popover{
-    display: block;
+    display: table-cell;
 }
 
 .amenities:hover .popover{
-    display: block;
+    display: table-cell;
 }
