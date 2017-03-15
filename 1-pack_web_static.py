@@ -16,6 +16,5 @@ def do_pack():
     try:
         local('sudo tar -zcf ./versions/web_static_$(date +%Y%m%d%H%M%S).tgz\
         ./web_static')
-        return (os.path.abspath('./versions'))
     except:
         return(None)
