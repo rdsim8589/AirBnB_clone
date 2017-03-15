@@ -19,5 +19,3 @@ def do_pack():
         return (os.path.abspath('./versions'))
     except:
         return(None)
-
-
