@@ -22,10 +22,8 @@ if [ ! -f $FILE ]; then
 </html>' | sudo tee $FILE
 fi
 SYMBOLIC="/data/web_static/current"
-if [ -d $SYMBOLIC ]; then
-    sudo rm -rf $SYMBOLIC
-fi
-sudo ln -s /data/web_static/releases/test $SYMBOLIC
+sudo ln -fs /data/web_static/releases/test $SYMBOLIC
 
 DIR="/data/"
 sudo chown -R ubuntu:ubuntu $DIR
+sed -i '37i \\tlocation /hbnb_static/ \{\n\t\talias /data/web_static/current/;\n\t\tindex index.html index.htm;\n\t\tautoindex on;\n\t\}' /etc/nginx/sites-available/default
