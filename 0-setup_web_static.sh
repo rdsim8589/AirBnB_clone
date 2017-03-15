@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/python3
 # check if package is installed
 dpkg -s nginx
 if [ "$echo $?" -ne 0 ]; then
