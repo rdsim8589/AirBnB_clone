@@ -2,11 +2,10 @@
 """
 this module contains the method do_pack
 """
-from fabric.api import local, task
+from fabric.api import local
 import os
 
 
-@task
 def do_pack():
     """
     creates a version_folder
