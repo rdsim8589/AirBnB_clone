@@ -7,8 +7,8 @@ if [ "$echo $?" -ne 0 ]; then
 fi
 DIR="/data/web_static/releases/test /data/web_static/shared/"
 for dir in $DIR; do
-    if [ ! -d $dir ]; then
-	sudo mkdir -p $dir
+    if [ ! -d "$dir" ]; then
+	sudo mkdir -p "$dir"
     fi
 done
 FILE="/data/web_static/releases/test/index.html"
