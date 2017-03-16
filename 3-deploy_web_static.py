@@ -14,7 +14,7 @@ def do_deploy(archive_path):
     """
     distrubes the archives to webservers
     """
-    if  os.path.exists(archive_path) is False:
+    if os.path.exists(archive_path) is False:
         return (False)
     try:
         print("entering try block")
@@ -50,6 +50,7 @@ def do_pack():
         return ('./versions/web_static_' + tar_time + '.tgz')
     except:
         return(None)
+
 
 @task
 def deploy():
