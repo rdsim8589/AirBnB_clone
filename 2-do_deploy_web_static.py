@@ -14,7 +14,7 @@ def do_deploy(archive_path):
     """
     distrubes the archives to webservers
     """
-    if not os.path.exists(archive_path):
+    if not os.path.isfile(archive_path):
         return (False)
     try:
         archive_name = archive_path.split('/')[-1].split('.')[0]
