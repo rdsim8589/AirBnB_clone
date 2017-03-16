@@ -49,6 +49,7 @@ def do_deploy(archive_path):
         return(False)
 
 
+@task
 def do_clean(number=0):
     '''
     cleans up the files in versions
@@ -60,6 +61,7 @@ def do_clean(number=0):
         print(e)
 
 
+@task
 def clean_server(number):
     '''
     cleans up the files in web_static* in the server
@@ -67,14 +69,12 @@ def clean_server(number):
     directory = '/data/web_static/releases'
     try:
         num = int(number)
-        directories = run("ls -t {}".format(directory), capture=True)
-        directories = files.split('\n')
-        if num == 0:
-            num = 1
-        dir_to_del = ' '.join(directories[num:])
-        run('cd {}; rm -rf {}'.format(directory, dir_to_del))
+        directories = run('size=$(ls -t {} | wc -l;\
+        for i in $(ls -t {} | tail -n $(( $size - {} )));\
+        do rm -fr $i;\
+        done'.format(directory, number, number))
     except Exception as e:
-            print(e)
+        print(e)
 
 
 @runs_once
