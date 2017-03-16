@@ -1,4 +1,4 @@
-#!/bin/usr/env bash
+#!/usr/bin/env bash
 # check if package is installed
 dpkg -s nginx
 if [ "$echo $?" -ne 0 ]; then
