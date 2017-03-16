@@ -12,6 +12,8 @@ def do_deploy(archive_path):
     """
     if not os.path.exists(archive_path):
         return (False)
+
+    env.hosts = ['54.209.54.84', '54.243.1.173']
     try:
         archive_name = archive_path.split('/')[-1].split('.')[0]
         put(archive_path, '/tmp/')
@@ -25,5 +27,7 @@ def do_deploy(archive_path):
         run('rm -rf /data/web_static/current')
         run(' ln -s /data/web_static/releases/' + archive_name +
             '/ /data/web_static/current')
+        print('New version deployed!')
+        return(True)
     except:
-            return(False)
+        return(False)
