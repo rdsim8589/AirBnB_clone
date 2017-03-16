@@ -71,7 +71,7 @@ def clean_server(number):
         num = int(number)
         if num == 0:
             num = 1
-        run('size=$(ls -t {} | wc -l;\
+        run('size=$(ls -t {} | wc -l);\
         for i in $(ls -t {} | tail -n $(( $size - {} )));\
         do rm -fr $i;\
         done'.format(directory, directory, number))
