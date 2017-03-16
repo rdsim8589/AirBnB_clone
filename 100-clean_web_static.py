@@ -72,7 +72,7 @@ def clean_server(number):
         directories = run('size=$(ls -t {} | wc -l;\
         for i in $(ls -t {} | tail -n $(( $size - {} )));\
         do rm -fr $i;\
-        done'.format(directory, number, number))
+        done'.format(directory, directory, number))
     except Exception as e:
         print(e)
 
