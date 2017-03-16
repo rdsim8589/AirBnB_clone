@@ -15,8 +15,9 @@ def do_pack():
     if not os.path.exists('versions'):
         os.mkdir('versions')
     try:
-        local('sudo tar -zcf ./versions/web_static_$(date +%Y%m%d%H%M%S).tgz\
+        tar_time = local("date +%Y%m%d%H%M%S", capture=True)
+        local('sudo tar -zcf ./versions/web_static_' + tar_time + '.tgz\
         ./web_static')
-        return (os.path.abspath('./versions'))
+        return (os.path.abspath('./versions/web_static_' + tar_time))
     except:
         return(None)
