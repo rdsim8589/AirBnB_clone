@@ -4,7 +4,7 @@ that creates and distributes an archive to your web
 servers, using the function deploy
 """
 import os
-from fabric.api import local, env, task, sudo
+from fabric.api import local, env, task, sudo, put
 from time import sleep
 env.hosts = ['54.209.54.84', '54.243.1.173']
 
@@ -17,7 +17,6 @@ def do_deploy(archive_path):
     if os.path.exists(archive_path) is False:
         return (False)
     try:
-        print("entering try block")
         archive_name = archive_path.split('/')[-1].split('.')[0]
         tar_path = '/data/web_static/releases/' + archive_name
         put(archive_path, '/tmp/')
