@@ -49,7 +49,7 @@ def do_deploy(archive_path):
         return(False)
 
 
-@runs_once
+
 def do_clean(number=0):
     '''
     cleans up the files in versions
@@ -60,7 +60,7 @@ def do_clean(number=0):
     except Exception as e:
         print(e)
 
-
+@runs_once
 def clean_server(number):
     '''
     cleans up the files in web_static* in the server
@@ -77,7 +77,7 @@ def clean_server(number):
     except Exception as e:
             print(e)
 
-
+@runs_once
 def clean_local(number):
     '''
     cleans up the files in versions locally
