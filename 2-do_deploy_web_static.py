@@ -37,15 +37,15 @@ def do_deploy(archive_path):
         put(archive_path, '/tmp/')
         sudo('mkdir -p /data/web_static/releases/' + archive_name)
         sudo('tar -xzf /tmp/' + archive_name +
-            '.tgz -C /data/web_static/releases/' + archive_name)
+             '.tgz -C /data/web_static/releases/' + archive_name)
         sudo('rm /tmp/' + archive_name + '.tgz')
         sudo('mv /data/web_static/releases/' + archive_name +
-            '/web_static/* /data/web_static/releases/' + archive_name + '/')
+             '/web_static/* /data/web_static/releases/' + archive_name + '/')
         sudo('rm -rf /data/web_static/releases/\
         ' + archive_name + '/web_static')
         sudo('rm -rf /data/web_static/current')
         sudo('ln -s /data/web_static/releases/' + archive_name +
-            '/ /data/web_static/current')
+             '/ /data/web_static/current')
         print('New version deployed!')
         return(True)
     except:
