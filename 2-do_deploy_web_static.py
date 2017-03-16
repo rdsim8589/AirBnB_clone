@@ -6,14 +6,15 @@ import os
 from fabric.api import put, run, env
 
 
+env.hosts = ['54.209.54.84', '54.243.1.173']
+
+
 def do_deploy(archive_path):
     """
     distrubes the archives to webservers
     """
     if not os.path.exists(archive_path):
         return (False)
-
-    env.hosts = ['54.209.54.84', '54.243.1.173']
     try:
         archive_name = archive_path.split('/')[-1].split('.')[0]
         put(archive_path, '/tmp/')
