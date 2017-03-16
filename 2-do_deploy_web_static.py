@@ -3,7 +3,7 @@
 module contains the deploy
 """
 import os
-from fabric.api import put, run, env, task
+from fabric.api import put, sudo, env, task
 
 
 env.hosts = ['54.209.54.84', '54.243.1.173']
