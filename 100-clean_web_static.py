@@ -69,7 +69,9 @@ def clean_server(number):
     directory = '/data/web_static/releases'
     try:
         num = int(number)
-        directories = run('size=$(ls -t {} | wc -l;\
+        if num == 0:
+            num = 1
+        run('size=$(ls -t {} | wc -l;\
         for i in $(ls -t {} | tail -n $(( $size - {} )));\
         do rm -fr $i;\
         done'.format(directory, directory, number))
