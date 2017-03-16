@@ -1,27 +1,12 @@
 #!/usr/bin/python3
 """
 module contains the deploy
-#env.hosts = ['54.209.54.84', '54.243.1.173']
 """
 import os
 from fabric.api import put, run, env, task
 
 
-@task
-def do_pack():
-    """
-    creates a version_folder
-    compresses all files found in web_static
-    """
-    if not os.path.exists('versions'):
-        os.mkdir('versions')
-    try:
-        tar_time = local('date +%Y%m%d%H%M%S', capture=True)
-        local('sudo tar -zcf ./versions/web_static_' + tar_time + '.tgz \
-        ./web_static')
-        return (os.path.abspath('./versions/web_static_' + tar_time + '/'))
-    except:
-        return(None)
+env.hosts = ['54.209.54.84', '54.243.1.173']
 
 
 @task
