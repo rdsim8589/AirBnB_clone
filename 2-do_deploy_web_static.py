@@ -23,7 +23,8 @@ def do_deploy(archive_path):
         run('sudo rm /tmp/' + archive_name + '.tgz')
         run('sudo mv /data/web_static/releases/' + archive_name +
             '/web_static/* /data/web_static/releases/' + archive_name + '/')
-        run('sudo rm -rf /data/web_static/releases/' + archive_name + '/web_static')
+        run('sudo rm -rf /data/web_static/releases/\
+        ' + archive_name + '/web_static')
         run('sudo rm -rf /data/web_static/current')
         run('sudo ln -s /data/web_static/releases/' + archive_name +
             '/ /data/web_static/current')
