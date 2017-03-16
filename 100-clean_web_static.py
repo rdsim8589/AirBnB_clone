@@ -30,10 +30,11 @@ def clean_server(num):
     try:
         if num == 0:
             num = 1
-        sudo('size=$(ls -t {} | wc -l);\
-        for i in $(ls -t {} | tail -n $(( $size - {} )));\
-        do rm -fr $i;\
-        done'.format(directory, directory, number))
+        result = sudo('ls -t {} | wc -l)')
+        if num < result:
+            sudo('for i in $(ls -t {:s} | tail -n {:d};\
+            do rm -fr $i;\
+            done'.format(directory, result - num))
     except Exception as e:
         print(e)
 
