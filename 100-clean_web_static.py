@@ -49,7 +49,6 @@ def do_deploy(archive_path):
         return(False)
 
 
-
 def do_clean(number=0):
     '''
     cleans up the files in versions
@@ -60,7 +59,7 @@ def do_clean(number=0):
     except Exception as e:
         print(e)
 
-@runs_once
+
 def clean_server(number):
     '''
     cleans up the files in web_static* in the server
@@ -76,6 +75,7 @@ def clean_server(number):
         run('cd {}; rm -rf {}'.format(directory, dir_to_del))
     except Exception as e:
             print(e)
+
 
 @runs_once
 def clean_local(number):
