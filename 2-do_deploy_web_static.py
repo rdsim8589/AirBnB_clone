@@ -1,12 +1,10 @@
 #!/usr/bin/python3
 """
 module contains the deploy
+#env.hosts = ['54.209.54.84', '54.243.1.173']
 """
 import os
 from fabric.api import put, run, env, task
-
-
-env.hosts = ['54.209.54.84', '54.243.1.173']
 
 
 @task
