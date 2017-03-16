@@ -18,19 +18,16 @@ def do_deploy(archive_path):
         return (False)
     try:
         archive_name = archive_path.split('/')[-1].split('.')[0]
-
+        tar_path = '/data/web_static/releases/' + archive_name
         put(archive_path, '/tmp/')
-        sudo('mkdir -p /data/web_static/releases/' + archive_name)
-        sudo('tar -xzf /tmp/' + archive_name +
-             '.tgz -C /data/web_static/releases/' + archive_name)
-        sudo('rm /tmp/' + archive_name + '.tgz')
-        sudo('mv /data/web_static/releases/' + archive_name +
-             '/web_static/* /data/web_static/releases/' + archive_name + '/')
-        sudo('rm -rf /data/web_static/releases/' +
-             archive_name + '/web_static')
+        sudo('mkdir -p {}'.format(tar_path))
+        sudo('tar -xzf /tmp/{}.tgz -C {}'.format(archive_name, tar_path))
+        sudo('rm /tmp/{}.tgz'.format(archive_name))
+        sudo('mv {}/web_static/* {}/'.format(tar_path, tar_path))
+        sudo('rm -rf {}/web_static'.format(tar_path))
         sudo('rm -rf /data/web_static/current')
-        sudo('ln -s /data/web_static/releases/' +
-             archive_name + '/ /data/web_static/current')
+        sudo('ln -s {} /data/web_static/current'.format(tar_path))
+
         print('New version deployed!')
         return(True)
     except:
