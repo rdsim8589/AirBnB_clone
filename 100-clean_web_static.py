@@ -63,7 +63,7 @@ def do_clean(number=0):
 
 def clean_server(number):
     '''
-    cleans up the files in versions
+    cleans up the files in web_static* in the server
     '''
     directory = '/data/web_static/releases'
     try:
