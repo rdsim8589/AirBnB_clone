@@ -26,13 +26,13 @@ def clean_server(num):
     '''
     cleans up the files in web_static* in the server
     '''
-    directory = '/data/web_static/releases'
     try:
+        directory = '/data/web_static/releases'
         if num == 0:
             num = 1
-        result = sudo('ls -t {} | wc -l)')
+        result = int(sudo('ls -t | wc -l'))
         if num < result:
-            sudo('for i in $(ls -t {:s} | tail -n {:d};\
+            run('for i in $(ls -t {:s} | tail -n {:d});\
             do rm -fr $i;\
             done'.format(directory, result - num))
     except Exception as e:
@@ -45,6 +45,7 @@ def clean_local(num):
     cleans up the files in versions locally
     '''
     try:
+        directory = "./versions"
         local('find {} -type f ! -name "*tgz" -delete'.format(directory))
         files = local("ls -t {}".format(directory), capture=True)
         files = files.split('\n')
