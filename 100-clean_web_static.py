@@ -68,12 +68,12 @@ def clean_server(number):
     directory = '/data/web_static/releases'
     try:
         num = int(number)
-        directories = local("ls -t {}".format(directory), capture=True)
+        directories = run("ls -t {}".format(directory), capture=True)
         directories = files.split('\n')
         if num == 0:
             num = 1
         dir_to_del = ' '.join(directories[num:])
-        local('cd {}; rm -rf {}'.format(directory, dir_to_del))
+        run('cd {}; rm -rf {}'.format(directory, dir_to_del))
     except Exception as e:
             print(e)
 
